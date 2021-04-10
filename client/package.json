@@ -1,16 +1,18 @@
 {
-  "name": "Cooking4Normals",
+  "name": "cooking4normals",
   "version": "0.1.0",
-  "description": "React-based Google Books Search app",
+  "description": "Cooking based social media app",
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "axios": "^0.21.0",
+    "@ant-design/icons": "^4.6.2",
+    "axios": "^0.18.1",
     "bootstrap": "^4.5.3",
-    "react": "^17.0.1",
+    "react": "^16.13.1",
     "react-bootstrap": "^1.4.0",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0"
+    "react-chat-engine": "^1.8.10",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,14 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ChatEngine } from 'react-chat-engine';
+import './App.css';
 import Feed from "./pages/Feed";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import Video from "./pages/Video";
-import Chat from "./pages/Chat";
+import Books from "./pages/Books";
+import Detail from "./pages/Detail";
+import NoMatch from "./pages/NoMatch";
+import Nav from "./components/Nav";
 import SearchResults from "./pages/SearchResults";
 
-
-function App() {
+const App = () => {
   return (
     <Router>
       <div>
@@ -27,7 +28,13 @@ function App() {
             <Video />
             </Route>
             <Route exact path="/Chat">
-            <Chat />
+             <ChatEngine 
+        height="100vh"
+        projectID="bbe806e8-81f3-4f62-92b4-957850212ca6"
+        userName="PonderHavok"
+        userSecret="1234"
+
+    />
             </Route>
             <Route exact path="/search">
             <SearchResults />
@@ -39,6 +46,5 @@ function App() {
       </div>
     </Router>
   );
-}
 
 export default App;
