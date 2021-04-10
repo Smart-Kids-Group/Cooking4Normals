@@ -6,14 +6,15 @@ import Profile from "./pages/Profile";
 import Video from "./pages/Video";
 import Chat from "./pages/Chat";
 
+
 function App() {
   return (
     <Router>
       <div>
         <Nav />
         <Switch>
-          <Route exact path={["/", "/books"]}>
-            <Books />
+          <Route exact path={["/"]}>
+            <SearchResults />
           </Route>
           <Route exact path="/books/:id">
             <Detail />
