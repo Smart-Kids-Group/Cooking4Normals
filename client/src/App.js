@@ -4,6 +4,7 @@ import Feed from "./pages/Feed";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Video from "./pages/Video";
+import Chat from "./pages/Chat";
 
 function App() {
   return (
