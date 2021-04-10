@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
-import SearchResults from "./pages/SearchResults";
+import Feed from "./pages/Feed";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Video from "./pages/Video";
+import Chat from "./pages/Chat";
+
 
 function App() {
   return (
