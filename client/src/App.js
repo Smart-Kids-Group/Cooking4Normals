@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ChatEngine } from 'react-chat-engine';
 import './App.css';
 import Feed from "./pages/Feed";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile"
+import Video from "./pages/Video"
 import SearchResults from "./pages/SearchResults";
 
 const App = () => {
@@ -39,12 +38,9 @@ const App = () => {
             <Route exact path="/search">
             <SearchResults />
             </Route>
-          <Route>
-            <NoMatch />
-          </Route>
         </Switch>
       </div>
     </Router>
   );
-
+  };
 export default App;
