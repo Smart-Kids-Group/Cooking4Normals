@@ -13,7 +13,8 @@ function SearchResults() {
 
   return(
  <>
-    <SearchBar/>
+    <SearchBar
+      />
     <RecipeCard
       thumbnail={"https://placehold.it/300x300"}
       title={"Tasty Recipe"}
