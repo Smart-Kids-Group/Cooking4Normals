@@ -1,44 +1,68 @@
 import React, { useState, useEffect } from "react";
 import RecipeCard from "../components/RecipeCard"
 import SearchBar from "../components/SearchBar"
-// import SaveBtn from "../components/DeleteBtn";
-// import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 // import { Link } from "react-router-dom";
-// import { Col, Row, Container } from "../components/Grid";
-// import { List, ListItem } from "../components/List";
-// import { Input, TextArea, FormBtn } from "../components/Form";
 
 function SearchResults() {
 
   // Setting our component's initial state
-  const [recipes, setRecipes] = useState([])
-  const [recipeSearch, setRecipeSearch] = useState({})
+  const [recipes, setRecipes] = useState([]);
+  const [recipeSearch, setRecipeSearch] = useState({ 
+    query: "q=pizza",
+    nameSearch: "pizza",
+    ingredientSearch: ""
+  });
+  
 
-  // Load all books and store them with setBooks
+  
   useEffect(() => {
     loadRecipes()
   }, [])
 
-  // Loads all books and sets them to books
+ 
   function loadRecipes() {
     API.searchRecipes(recipeSearch)
       .then(res => 
-        setBooks(res.data)
+        setRecipes(res.data)
       )
       .catch(err => console.log(err));
   };
+  
 
+  
+  function handleInputChange(event) {
+    const { value, name } = event.target;
+       setRecipeSearch({...recipeSearch, [name]: value})
 
+    console.log(recipeSearch);
+};
+
+function handleRecipeSubmit(recipe) {
+  if (recipe.title) {
+      API.saveRecipe(
+          {
+              title: recipe.title,
+              description: recipe.description,
+              ingredients: recipe.ingredients,
+              image: recipe.image,
+              href: recipe.href
+          }
+      )
+          .then(res => console.log(res))
+          .catch(err => console.log(err));
+  }
+}
   return(
  <>
-    <SearchBar
+    <SearchBar handleInputChange={handleInputChange}
       />
     <RecipeCard
       thumbnail={"https://placehold.it/300x300"}
       title={"Tasty Recipe"}
       ingredients={"Lots of good stuff"}
-      href={"/NoMatch"} />
+      href={"/NoMatch"} 
+      handleRecipeSubmit={handleRecipeSubmit}/>
       </>
   )
 

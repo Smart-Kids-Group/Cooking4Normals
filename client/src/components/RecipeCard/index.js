@@ -3,6 +3,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button"
 
 const RecipeCard = (props) => {
 
@@ -38,6 +39,14 @@ const RecipeCard = (props) => {
                         {props.ingreedients || "No ingredients listed."}
                     </Card.Text>
                     <a className="btn-primary float-right" rel="noreferrer noopener" target="_blank" href={props.href}></a>
+                    <Button 
+                                className="save-btn" 
+                                size="sm" 
+                                variant="outline-secondary" 
+                                onClick={() => props.handleRecipeSubmit(props.data)}
+                                >
+                                    Save
+                            </Button>
                     </Col>
                     </Row>
             </Card>

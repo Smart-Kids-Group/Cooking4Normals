@@ -25,7 +25,7 @@ function SearchBar (props) {
     <Col size="5">
       <label> Search by Ingredient
       <Input
-        name="IngredientSearch"
+        name="ingredientSearch"
         onChange={props.handleInputChange}
         placeholder="Ingredient"
         />
