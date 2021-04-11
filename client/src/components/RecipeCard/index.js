@@ -8,20 +8,20 @@ const RecipeCard = (props) => {
 
     return (
         <Col md={12}>
-            <Card className="mb-4 shadow-sm" page={props.page}>
+            <Card className="mb-4 w-60 shadow-sm" page={props.page}>
                 <Row>   
                 <Col md={3}>
                     {
                         (props.thumbnail)
                         ? <Card.Text 
-                            className="text-center"
+                            className="float-left"
                         ><Image 
                         src={props.thumbnail}
                         alt="recipe title" 
                         />
                         </Card.Text>
                         : <Card.Text
-                            className="text-center"
+                            className="float-left"
                         >
                             "https://placehold.it/150-x150"
                         </Card.Text>
@@ -37,7 +37,7 @@ const RecipeCard = (props) => {
                     <Card.Text>
                         {props.ingreedients || "No ingredients listed."}
                     </Card.Text>
-                    <a rel="noreferrer noopener" target="_blank" href={props.href}></a>
+                    <a className="btn-primary float-right" rel="noreferrer noopener" target="_blank" href={props.href}></a>
                     </Col>
                     </Row>
             </Card>
