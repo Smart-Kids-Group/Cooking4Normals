@@ -24,7 +24,8 @@ function SearchResults() {
   function loadRecipes() {
     API.searchRecipes(recipeSearch)
       .then(res => 
-        setRecipes(res.data)
+        {setRecipes(res.data);
+        console.log(recipes)}
       )
       .catch(err => console.log(err));
   };
@@ -34,9 +35,23 @@ function SearchResults() {
   function handleInputChange(event) {
     const { value, name } = event.target;
        setRecipeSearch({...recipeSearch, [name]: value})
-
-    console.log(recipeSearch);
 };
+
+  function handleSearchSubmit(event){
+    event.preventDefault();
+    let query="";
+    if (recipeSearch.nameSearch && recipeSearch.ingredientSearch){
+      query = `q=${recipeSearch.nameSearch}i=${recipeSearch.ingredientSearch}`;
+    } else if (recipeSearch.ingredientSearch){
+      query = `i=${recipeSearch.ingredientSearch}`;
+    } else {
+      query = `q=${recipeSearch.nameSearch}`;
+    }
+      setRecipeSearch({...recipeSearch, query: query})
+      console.log(recipeSearch.query)
+      loadRecipes(recipeSearch.query);
+    };
+  
 
 function handleRecipeSubmit(recipe) {
   if (recipe.title) {
@@ -55,14 +70,17 @@ function handleRecipeSubmit(recipe) {
 }
   return(
  <>
-    <SearchBar handleInputChange={handleInputChange}
+    <SearchBar 
+      handleInputChange={handleInputChange}
+      handleSearchSubmit={handleSearchSubmit}
       />
     <RecipeCard
-      thumbnail={"https://placehold.it/300x300"}
+      thumbnail={""}
       title={"Tasty Recipe"}
       ingredients={"Lots of good stuff"}
       href={"/NoMatch"} 
-      handleRecipeSubmit={handleRecipeSubmit}/>
+      handleRecipeSubmit={handleRecipeSubmit}
+      />
       </>
   )
 

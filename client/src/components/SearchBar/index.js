@@ -40,8 +40,7 @@ function SearchBar (props) {
     <Row>
       <Col>
       <FormBtn
-        onClick={props.handleFormSubmit}
-        value={props.bookSearch}
+        onClick={props.handleSearchSubmit}
         type="success"
         className="input-lg"
       >

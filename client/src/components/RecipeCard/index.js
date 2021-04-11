@@ -24,7 +24,7 @@ const RecipeCard = (props) => {
                         : <Card.Text
                             className="float-left"
                         >
-                            "https://placehold.it/150-x150"
+                            "https://placehold.it/150"
                         </Card.Text>
                     }
                     </Col>

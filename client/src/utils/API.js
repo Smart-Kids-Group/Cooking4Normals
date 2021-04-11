@@ -3,8 +3,14 @@ import axios from "axios";
 export default {
   // Gets all books
   searchRecipes: function(query){
-    return axios.get(`https://recipe-puppy.p.rapidapi.com/?${query}`)
-  },
+    return axios({
+    "method": "GET",
+    "url": `https://recipe-puppy.p.rapidapi.com/?${query}`,  
+    "headers": {
+        "x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
+        "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"}
+    })
+    },
   getRecipes: function() {
     return axios.get("/api/recipes");
   },
