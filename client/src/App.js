@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile"
 import Video from "./pages/Video"
 import SearchResults from "./pages/SearchResults";
+import CookBook from "./pages/CookBook";
 
 const App = () => {
   return (
@@ -37,6 +38,9 @@ const App = () => {
             </Route>
             <Route exact path="/search">
             <SearchResults />
+            </Route>
+            <Route exact path="/cookbook">
+            <CookBook />
             </Route>
         </Switch>
       </div>
