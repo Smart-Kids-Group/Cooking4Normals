@@ -1,9 +1,5 @@
 import React from "react";
-
 function Video() {
-  return (
-  
-  );
+  return null;
 }
-
 export default Video;

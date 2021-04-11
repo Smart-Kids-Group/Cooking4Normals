@@ -1,9 +1,5 @@
 import React from "react";
-
 function Profile() {
-  return (
-  
-  );
+  return null;
 }
-
 export default Profile;

@@ -1,9 +1,5 @@
 import React from "react";
-
 function Home() {
-  return (
-  
-  );
+  return null;
 }
-
 export default Home;
