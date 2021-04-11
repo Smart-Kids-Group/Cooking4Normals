@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ChatEngine } from 'react-chat-engine';
 import './App.css';
 import Feed from "./pages/Feed";
+import Chat from "./pages/Chat";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile"
 import Video from "./pages/Video"
@@ -27,13 +27,7 @@ const App = () => {
             <Video />
             </Route>
             <Route exact path="/Chat">
-             <ChatEngine 
-        height="100vh"
-        projectID="bbe806e8-81f3-4f62-92b4-957850212ca6"
-        userName="PonderHavok"
-        userSecret="1234"
-
-    />
+            <Chat />
             </Route>
             <Route exact path="/search">
             <SearchResults />
