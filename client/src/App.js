@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ChatEngine } from "react-chat-engine";
 import "./App.css";
 import Feed from "./pages/Feed";
 import Chat from "./pages/Chat";
@@ -9,6 +8,7 @@ import Profile from "./pages/Profile";
 import Video from "./pages/Video";
 import SearchResults from "./pages/SearchResults";
 import CookBook from "./pages/Cookbook";
+
 
 
 const App = () => {
@@ -32,6 +32,7 @@ const App = () => {
             <SearchResults />
           </Route>
           <Route exact path="/chat">
+            <Chat />
           </Route>
             <Route exact path="/cookbook">
             <CookBook />
