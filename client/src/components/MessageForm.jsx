@@ -39,7 +39,7 @@ const MessageForm = (props) => {
                 onChange={handleChange}
                 onSubmit={handleSubmit}
             />
-            <label htmlFor="upload-butoon">
+            <label htmlFor="upload-button">
                 <span className="image-button">
                     <PictureOutlined className="pictue-icon"/>
                 </span>
