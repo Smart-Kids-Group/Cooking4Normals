@@ -25,7 +25,7 @@ function SearchBar (props) {
     <Col size="5">
       <label> Search by Ingredient
       <Input
-        name="IngredientSearch"
+        name="ingredientSearch"
         onChange={props.handleInputChange}
         placeholder="Ingredient"
         />
@@ -40,8 +40,7 @@ function SearchBar (props) {
     <Row>
       <Col>
       <FormBtn
-        onClick={props.handleFormSubmit}
-        value={props.bookSearch}
+        onClick={props.handleSearchSubmit}
         type="success"
         className="input-lg"
       >
