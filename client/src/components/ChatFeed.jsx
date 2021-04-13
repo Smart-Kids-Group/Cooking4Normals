@@ -8,10 +8,11 @@ const ChatFeed = (props) => {
     
     const chat = chats && chats[activeChat];
 
-    const renderReadReceipts = (message, isMymessage) => {
+    const renderReadReceipts = (message, isMyMessage) => {
+       
         return chat.people.map((person, index) => person.last_read === message.id && (
             <div
-                key={'read_${index}'}
+                key={`read_${index}`}
                 className="read-receipt"
                 style={{
                     float: isMyMessage ? 'right' : 'left',
@@ -30,7 +31,7 @@ const ChatFeed = (props) => {
             const isMyMessage = userName === message.sender.username;
 
             return (
-                <div key={'msg_${index}'} style={{width:'100%' }} >
+                <div key={`msg_${index}`} style={{width:'100%' }} >
                     <div className="message-block">
                         {
                             isMyMessage
