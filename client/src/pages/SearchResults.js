@@ -22,7 +22,7 @@ function SearchResults() {
 
  
   function loadRecipes() {
-    API.searchRecipes(recipeSearch)
+    API.searchRecipes(recipeSearch.query)
       .then(res => 
         {setRecipes(res.data);
         console.log(recipes)}

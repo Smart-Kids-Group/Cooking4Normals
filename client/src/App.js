@@ -10,7 +10,6 @@ import SearchResults from "./pages/SearchResults";
 import CookBook from "./pages/Cookbook";
 
 
-
 const App = () => {
   return (
     <Router>
