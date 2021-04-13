@@ -9,7 +9,7 @@ function Nav() {
         Cooking4Normals
       </Link>
       <div>
-        <ul className="navbar-nav">
+        <ul className="navbar-nav mr-auto">
           <li className="nav-item">
           <Link
               to="/"
@@ -45,16 +45,9 @@ function Nav() {
               </li>
           <li className="nav-item">
               <Link 
-              to="/profile"
-              className={window.location.pathname ==="/profile" ? "nav-link active" : "nav-link"}
-              >Profile
-              </Link>
-              </li>
-          <li className="nav-item">
-              <Link 
-              to="/SearchResults"
+              to="/Search"
               className={window.location.pathname ==="/search" ? "nav-link active" : "nav-link"}
-              >Search Results
+              >Recipe Search
               </Link>
               </li>
           <li className="nav-item">
@@ -64,6 +57,16 @@ function Nav() {
               >Videos
               </Link>
           </li>
+          <li className="nav-item ml-auto">
+            Login
+          </li>
+          <li className="nav-item">
+              <Link 
+              to="/profile"
+              className={window.location.pathname ==="/profile" ? "nav-link active" : "nav-link"}
+              >Profile
+              </Link>
+              </li>
         </ul>
       </div>
     </nav>
