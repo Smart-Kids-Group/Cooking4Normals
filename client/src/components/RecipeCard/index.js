@@ -13,11 +13,11 @@ const RecipeCard = (props) => {
                 <Row>   
                 <Col md={3}>
                     {
-                        (props.thumbnail)
+                        (props.data.thumbnail)
                         ? <Card.Text 
                             className="float-left"
                         ><Image 
-                        src={props.thumbnail}
+                        src={props.data.thumbnail}
                         alt="recipe title" 
                         />
                         </Card.Text>
@@ -32,13 +32,22 @@ const RecipeCard = (props) => {
                     <Card.Title 
                         className="text-center"
                     >
-                        {props.title}
+                        {props.data.title}
                     </Card.Title>
                     <br />
+                    {
+                        (props.data.description)
+                        ? <Card.Text 
+                            className="float-left"
+                        > {props.data.description}
+                        </Card.Text>
+                        : null
+                    }
+
                     <Card.Text>
-                        {props.ingreedients || "No ingredients listed."}
+                        {props.data.ingredients || "No ingredients listed."}
                     </Card.Text>
-                    <a className="btn-primary float-right" rel="noreferrer noopener" target="_blank" href={props.href}></a>
+                    <a className="btn-primary float-right" rel="noreferrer noopener" target="_blank" href={props.data.href}></a>
                     <Button 
                                 className="save-btn" 
                                 size="sm" 

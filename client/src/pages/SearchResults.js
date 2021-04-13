@@ -24,7 +24,7 @@ function SearchResults() {
   function loadRecipes() {
     API.searchRecipes(recipeSearch.query)
       .then(res => 
-        {setRecipes(res.data);
+        {setRecipes(res.data.results);
         console.log(recipes)}
       )
       .catch(err => console.log(err));
@@ -74,13 +74,16 @@ function handleRecipeSubmit(recipe) {
       handleInputChange={handleInputChange}
       handleSearchSubmit={handleSearchSubmit}
       />
-    <RecipeCard
-      thumbnail={""}
-      title={"Tasty Recipe"}
-      ingredients={"Lots of good stuff"}
-      href={"/NoMatch"} 
-      handleRecipeSubmit={handleRecipeSubmit}
-      />
+    
+    {recipes
+            ? recipes.map((recipe, i) => (
+              <RecipeCard 
+                key={i}
+                data={recipe}
+                handleRecipeSubmit={handleRecipeSubmit}
+                />    
+            ))
+            : null}
       </>
   )
 
