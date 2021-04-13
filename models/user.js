@@ -1,35 +1,27 @@
-const bcrypt = require("bcryptjs");
-module.exports = function(sequelize, DataTypes) {
-  const User = sequelize.define("User", {
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
+const mongoose = require ("mongoose");
+const Schema = mongoose.Schema;
+
+let userSchema = new Schema ({
+    username: {
+        type: String,
+        trim: true,
+        required: "Username is Required"
+      },
+    
+      password: {
+        type: String,
+        trim: true,
+        required: "Password is Required",
+        validate: [({ length }) => length >= 6, "Password should be longer."]
+      },
+    
+      email: {
+        type: String,
+        unique: true,
+        match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
       }
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
-  });
-
-  User.prototype.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password);
-  };
-
-  User.addHook("beforeCreate", user => {
-    user.password = bcrypt.hashSync(
-      user.password,
-      bcrypt.genSaltSync(10),
-      null
-    );
-  });
-  User.associate = function(models) {
-    User.hasMany(models.games, {
-      onDelete: "cascade"
     });
-  };
-  return User;
-};
+
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;
