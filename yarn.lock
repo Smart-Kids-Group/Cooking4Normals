@@ -743,7 +743,7 @@
     "snapdragon" "^0.8.1"
     "to-regex" "^3.0.1"
 
-"express@^4.16.3":
+"express@^4.17.1":
   "integrity" "sha512-mHJ9O79RqluphRrcw2X/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7VoeUVqgb27xlEMXTnYt4g=="
   "resolved" "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz"
   "version" "4.17.1"
@@ -1462,7 +1462,7 @@
   "resolved" "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz"
   "version" "1.0.2"
 
-"mongoose@*", "mongoose@^5.3.16":
+"mongoose@*", "mongoose@^5.12.3":
   "integrity" "sha512-frsSR9yeldaRpSUeTegXCSB0Tu5UGq8sHuHBuEV31Jk3COyxlKFQPL7UsdMhxPUCmk74FpOYSmNwxhWBEqgzQg=="
   "resolved" "https://registry.yarnpkg.com/mongoose/-/mongoose-5.12.3.tgz"
   "version" "5.12.3"

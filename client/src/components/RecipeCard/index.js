@@ -3,27 +3,28 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button"
 
 const RecipeCard = (props) => {
 
     return (
         <Col md={12}>
-            <Card className="mb-4 shadow-sm" page={props.page}>
+            <Card className="mb-4 w-60 shadow-sm" page={props.page}>
                 <Row>   
                 <Col md={3}>
                     {
-                        (props.thumbnail)
+                        (props.data.thumbnail)
                         ? <Card.Text 
-                            className="text-center"
+                            className="float-left"
                         ><Image 
-                        src={props.thumbnail}
+                        src={props.data.thumbnail}
                         alt="recipe title" 
                         />
                         </Card.Text>
                         : <Card.Text
-                            className="text-center"
+                            className="float-left"
                         >
-                            "https://placehold.it/150-x150"
+                            "https://placehold.it/150"
                         </Card.Text>
                     }
                     </Col>
@@ -31,13 +32,30 @@ const RecipeCard = (props) => {
                     <Card.Title 
                         className="text-center"
                     >
-                        {props.title}
+                        {props.data.title}
                     </Card.Title>
                     <br />
+                    {
+                        (props.data.description)
+                        ? <Card.Text 
+                            className="float-left"
+                        > {props.data.description}
+                        </Card.Text>
+                        : null
+                    }
+
                     <Card.Text>
-                        {props.ingreedients || "No ingredients listed."}
+                        {props.data.ingredients || "No ingredients listed."}
                     </Card.Text>
-                    <a rel="noreferrer noopener" target="_blank" href={props.href}></a>
+                    <a className="btn-primary float-right" rel="noreferrer noopener" target="_blank" href={props.data.href}></a>
+                    <Button 
+                                className="save-btn" 
+                                size="sm" 
+                                variant="outline-secondary" 
+                                onClick={() => props.handleRecipeSubmit(props.data)}
+                                >
+                                    Save
+                            </Button>
                     </Col>
                     </Row>
             </Card>
