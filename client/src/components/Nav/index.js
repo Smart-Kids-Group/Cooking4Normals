@@ -28,26 +28,36 @@ function Nav() {
               className={window.location.pathname ==="/feed" ? "nav-link active" : "nav-link"}
               >Feed
               </Link>
+              </li>
+          <li className="nav-item">
               <Link 
               to="/chat"
               className={window.location.pathname ==="/chat" ? "nav-link active" : "nav-link"}
               >Chat
               </Link>
+              </li>
+          <li className="nav-item">
               <Link 
               to="/cookbook"
               className={window.location.pathname ==="/cookbook" ? "nav-link active" : "nav-link"}
               >Cookbook
               </Link>
+              </li>
+          <li className="nav-item">
               <Link 
               to="/profile"
               className={window.location.pathname ==="/profile" ? "nav-link active" : "nav-link"}
               >Profile
               </Link>
+              </li>
+          <li className="nav-item">
               <Link 
               to="/SearchResults"
               className={window.location.pathname ==="/search" ? "nav-link active" : "nav-link"}
               >Search Results
               </Link>
+              </li>
+          <li className="nav-item">
               <Link 
               to="/video"
               className={window.location.pathname ==="/video" ? "nav-link active" : "nav-link"}
