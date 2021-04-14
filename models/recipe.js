@@ -10,9 +10,15 @@ let recipeSchema = new Schema ({
         type: String
     },
     ingredients: {
-        type: String
+        type: Array
     },
     instructions: {
+        type: Array
+    },
+    href: {
+        type: String
+    },
+    image: {
         type: String
     }
 

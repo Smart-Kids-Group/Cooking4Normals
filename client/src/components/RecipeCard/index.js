@@ -23,8 +23,10 @@ const RecipeCard = (props) => {
                         </Card.Text>
                         : <Card.Text
                             className="float-left"
-                        >
-                            "https://placehold.it/150"
+                        ><Image 
+                        src="https://via.placeholder.com/150"
+                        alt="placeholder" 
+                        />
                         </Card.Text>
                     }
                     </Col>
@@ -52,7 +54,7 @@ const RecipeCard = (props) => {
                                 className="save-btn" 
                                 size="sm" 
                                 variant="outline-secondary" 
-                                onClick={() => props.handleRecipeSubmit(props.data)}
+                                onClick={() => props.handleRecipeSubmit(props.data.href)}
                                 >
                                     Save
                             </Button>
