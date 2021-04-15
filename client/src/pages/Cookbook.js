@@ -6,7 +6,9 @@ import Nav from "../components/Nav";
 function CookBook(){
     return( 
     <>
-        
+        <Nav />
+        <SearchBar
+        />
         <UserRecipe
         />
     </>
