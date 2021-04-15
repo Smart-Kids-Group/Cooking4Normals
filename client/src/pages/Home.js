@@ -1,5 +1,16 @@
 import React from "react";
+import '../App.css';
+import Footer from '../components/Footer/index';
+import HeroSection from '../components/HeroSection';
+
+
+
 function Home() {
-  return null;
-}
+    return (
+        <>
+        <HeroSection />
+        <Footer />
+        </>
+      );
+    }
 export default Home;
