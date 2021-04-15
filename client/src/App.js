@@ -10,11 +10,14 @@ import SearchResults from "./pages/SearchResults";
 import CookBook from "./pages/Cookbook";
 import Navbar from "./components/Navbar";
 
+
+
 const App = () => {
   return (
     <Router>
       <div>
-        <Navbar/>
+
+    <Navbar />
         <Switch>
           <Route exact path="/">
             <Home />
