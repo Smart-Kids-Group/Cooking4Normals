@@ -7,14 +7,14 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Video from "./pages/Video";
 import SearchResults from "./pages/SearchResults";
-import CookBook from "./pages/CookBook";
-import Nav from "./components/Nav";
+import CookBook from "./pages/Cookbook";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <Router>
       <div>
-        <Nav/>
+        <Navbar/>
         <Switch>
           <Route exact path="/">
             <Home />

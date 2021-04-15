@@ -1,8 +1,8 @@
 import React from "react";
 import { ChatEngine } from "react-chat-engine";
 import "../App.css";
-import LoginForm from "../components/LoginForm";
-import ChatFeed from "../components/ChatFeed";
+import LoginForm from "../components/Chat/LoginForm";
+import ChatFeed from "../components/Chat/ChatFeed";
 
 
 
@@ -17,6 +17,7 @@ function Chat() {
       userSecret={localStorage.getItem("password")}
       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
     />
+    
   );
 }
 export default Chat;

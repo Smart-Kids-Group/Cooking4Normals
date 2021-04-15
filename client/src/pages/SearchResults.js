@@ -53,21 +53,19 @@ function SearchResults() {
     };
   
 
-function handleRecipeSubmit(recipe) {
-  if (recipe.title) {
-      API.saveRecipe(
-          {
-              title: recipe.title,
-              description: recipe.description,
-              ingredients: recipe.ingredients,
-              image: recipe.image,
-              href: recipe.href
-          }
-      )
-          .then(res => console.log(res))
+
+function importRecipe(recipeURL) {
+  if (recipeURL) {
+    API.importRecipeInfo(recipeURL)
+    .then (res => {
+      let recipe = res.data[0];
+      API.saveRecipe(recipe )
+          .then(res => console.log(res, recipe))
           .catch(err => console.log(err));
-  }
-}
+  })
+}}
+
+
   return(
  <>
     <SearchBar 
@@ -80,7 +78,7 @@ function handleRecipeSubmit(recipe) {
               <RecipeCard 
                 key={i}
                 data={recipe}
-                handleRecipeSubmit={handleRecipeSubmit}
+                handleRecipeSubmit={importRecipe}
                 />    
             ))
             : null}
@@ -91,12 +89,3 @@ function handleRecipeSubmit(recipe) {
 
 export default SearchResults;
 
-{/* <div class='card' style='width: 600px;'>
-   <div class = 'card-divider'>
-   <a id='card-title-${i}' href= '#'></a>
-   </div>
-   <img src='./assets/cook.jpg' id='thumb-${i}' style='height: 75px; width:75px; float: left;'>
-     <div class='card-section' style='float: right;'><a class = 'button save' id='${i}'>Save to Cookbook</a
-     ><p id='ing-${i}'></p>
-     </div>
-     </div>` */}
