@@ -9,7 +9,7 @@ function SignUp() {
   const [password, setPassword] = useState("");
 
   const signup = () => {
-    auth.createUserWithEmailandPassworkd(email,password).then(res => {
+    auth.createUserWithEmailAndPassword(email,password).then(res => {
 
       history.push("/feed");
     }).catch(err => {})
