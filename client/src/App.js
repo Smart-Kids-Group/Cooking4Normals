@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Feed from "./pages/Feed";
@@ -9,8 +9,17 @@ import Video from "./pages/Video";
 import SearchResults from "./pages/SearchResults";
 import CookBook from "./pages/Cookbook";
 import Navbar from "./components/Navbar";
+import {ProtectedRoute} from "./components/protectedRoute";
+
 
 const App = () => {
+
+  // const [token, setToken] = useState();
+
+  // if(!token) {
+  //   return <Login setToken={setToken} /> 
+  // }
+
   return (
     <Router>
       <div>
@@ -19,24 +28,22 @@ const App = () => {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/feed">
-            <Feed />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
-          <Route exact path="/video">
+          <ProtectedRoute exact path="/feed" component={Feed}>
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/profile" component={Profile}>
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/video">
             <Video />
-            </Route>
-          <Route exact path="/search">
+            </ProtectedRoute>
+          <ProtectedRoute exact path="/search">
             <SearchResults />
-          </Route>
-          <Route exact path="/chat">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/chat">
             <Chat />
-          </Route>
-            <Route exact path="/cookbook">
+          </ProtectedRoute>
+            <ProtectedRoute exact path="/cookbook">
             <CookBook />
-            </Route>
+            </ProtectedRoute>
         </Switch>
       </div>
     </Router>
