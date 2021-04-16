@@ -5,9 +5,6 @@ import UserRecipe from "../components/UserRecipe";
 function CookBook(){
     return( 
     <>
-        <Nav />
-        <SearchBar
-        />
         <UserRecipe
         />
     </>

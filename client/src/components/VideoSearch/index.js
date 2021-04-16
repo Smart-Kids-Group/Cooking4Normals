@@ -1,11 +1,18 @@
 import React from 'react';
+import { Input, FormBtn } from "../Form";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
 function VideoSearch() {
+
+
 
 return (
   <>
 <form>
-              <Container>
+              {/* <Container>
                 <Row>
                   <Col size="xs-9 sm-10">
                     <Input
@@ -25,7 +32,7 @@ return (
                     </Button>
                   </Col>
                 </Row>
-              </Container>
+              </Container> */}
             </form>
             </>
             )
