@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { auth } from "../../utils/firebase.js"
 import { useHistory } from "react-router-dom";
+import "./signup.scss"
 
 function SignUp() {
   const history = useHistory();
@@ -9,6 +10,7 @@ function SignUp() {
 
   const signup = () => {
     auth.createUserWithEmailandPassworkd(email,password).then(res => {
+
       history.push("/feed");
     }).catch(err => {})
   }

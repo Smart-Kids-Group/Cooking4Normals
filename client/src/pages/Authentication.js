@@ -3,6 +3,7 @@ import SignIn from '../components/Signin';
 import SignUp from '../components/SignUp';
 import { auth } from '../utils/firebase';
 import { useHistory } from 'react-router-dom';
+import "./auth.scss"
 
 function Auth() {
     const history = useHistory();

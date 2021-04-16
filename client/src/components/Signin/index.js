@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { auth } from "../../utils/firebase.js"
 import { useHistory } from "react-router-dom";
+import "./signin.scss"
 
 
 function SignIn() {
