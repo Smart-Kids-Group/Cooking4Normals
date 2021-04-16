@@ -1,5 +1,10 @@
 import React from "react";
 function Video() {
-  return null;
+  return (
+    <>
+    <VideoSearch />
+    <VideoFeed />
+    </>
+  )
 }
 export default Video;

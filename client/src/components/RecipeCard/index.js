@@ -49,7 +49,7 @@ const RecipeCard = (props) => {
                     <Card.Text>
                         {props.data.ingredients || "No ingredients listed."}
                     </Card.Text>
-                    <a className="btn-primary float-right" rel="noreferrer noopener" target="_blank" href={props.data.href}></a>
+                    <a className="btn-primary float-right" rel="noreferrer noopener" target="_blank" href={props.href}></a>
                     <Button 
                                 className="save-btn" 
                                 size="sm" 
