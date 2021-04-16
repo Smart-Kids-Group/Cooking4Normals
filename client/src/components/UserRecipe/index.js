@@ -4,21 +4,28 @@ const UserRecipe = () => {
     const [name, setName] = useState("")
   return (
     <div className="App">
+      <div>
+        <h2>Add your own recipe.</h2>
       <form>
-        <label for="ingredients">Ingredients</label>
-        <input type="text" id ="ingredients"
+        <label for="RecipeName">Recipe Name</label>
+        <input type="text" id ="RecipeName"
          value={name}
          onChange={(e) => setName (e.target.value)}
           />
-          <br />
+          <br/>
+          <label for="ingredients">Ingredients</label>
+          <textarea type="text" id ="instructions"/>
+          <br/>
         <label for="instructions">Cook Instructions</label>
-        <input type="text" id="instructions"/>
+        <textarea type="text" id="instructions"/>
         <br/>
         <input type="submit"
         value="Submit"
+        
         />
       </form>
     </div>
+  </div>
   )
 };
 

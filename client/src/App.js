@@ -22,10 +22,12 @@ const App = (props) => {
     })
  }, [])
 
+
   return (
     <Router>
       <div>
-        <Navbar/>
+
+    <Navbar />
         <Switch>
           <Route exact path="/">
             <Home />

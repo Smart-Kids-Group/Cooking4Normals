@@ -22,9 +22,15 @@ function SearchResults() {
 
  
   function loadRecipes() {
+<<<<<<< Updated upstream
     API.searchRecipes(recipeSearch.query)
       .then(res => 
         {setRecipes(res.data.results);
+=======
+    API.searchRecipes(recipeSearch)
+      .then(res => 
+        {setRecipes(res.data);
+>>>>>>> Stashed changes
         console.log(recipes)}
       )
       .catch(err => console.log(err));
@@ -72,6 +78,7 @@ function importRecipe(recipeURL) {
       handleInputChange={handleInputChange}
       handleSearchSubmit={handleSearchSubmit}
       />
+<<<<<<< Updated upstream
     
     {recipes
             ? recipes.map((recipe, i) => (
@@ -82,6 +89,15 @@ function importRecipe(recipeURL) {
                 />    
             ))
             : null}
+=======
+    <RecipeCard
+      thumbnail={""}
+      title={"Tasty Recipe"}
+      ingredients={"Lots of good stuff"}
+      href={"/NoMatch"} 
+      handleRecipeSubmit={handleRecipeSubmit}
+      />
+>>>>>>> Stashed changes
       </>
   )
 
