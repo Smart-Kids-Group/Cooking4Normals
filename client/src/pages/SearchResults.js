@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import RecipeCard from "../components/RecipeCard"
-import SearchBar from "../components/SearchBar"
+import RecipeCard from "../components/RecipeCard";
+import SearchBar from "../components/SearchBar";
 import API from "../utils/API";
+
 // import { Link } from "react-router-dom";
 
 function SearchResults() {
@@ -25,7 +26,6 @@ function SearchResults() {
     API.searchRecipes(recipeSearch.query)
       .then(res => 
         {setRecipes(res.data.results);
-
         console.log(recipes)}
       )
       .catch(err => console.log(err));
@@ -83,8 +83,7 @@ function importRecipe(recipeURL) {
                 />    
             ))
             : null}
-    </>
-      
+      </>
   )
 
 }

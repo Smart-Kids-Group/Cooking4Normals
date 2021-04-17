@@ -1,4 +1,5 @@
 import axios from "axios";
+import YTSearch from "youtube-api-search";
 
 export default {
   // search for new recipes
@@ -47,5 +48,10 @@ export default {
       image: recipe.images[0]
     };
     return axios.post("/api/recipes", recipeData);
-  }
+  },
+  searchVideos: function(query) {
+      YTSearch({key: "AIzaSyDHMkMPz8J_92HuAy0h_uezsoFRGqa_7mM", term: query}, (videos) => {
+       return videos;
+      })
+    }
 };

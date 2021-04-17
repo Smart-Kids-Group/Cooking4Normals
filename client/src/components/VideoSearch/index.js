@@ -10,8 +10,10 @@ function VideoSearch() {
 
 
 return (
-  <>
-<form>
+  null
+)
+}
+/* <form>
               <Container>
                 <Row>
                   <Col size="xs-9 sm-10">
@@ -36,6 +38,6 @@ return (
             </form>
             </>
             )
-          }
+          } */
           
           export default VideoSearch;
