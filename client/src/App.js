@@ -34,7 +34,7 @@ const App = (props) => {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/auth">
+          <Route exact path="/sign-up">
             <Auth />
           </Route>
           <ProtectedRoute exact path="/feed" component={Feed} />

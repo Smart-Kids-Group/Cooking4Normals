@@ -16,6 +16,7 @@ function Auth() {
     });
   }, []);
 
+
   return (
     <div className="auth bg">
       {authType === "signIn" ? (
@@ -25,6 +26,7 @@ function Auth() {
             New here?{" "}
             <span onClick={() => setAuthType("signUp")}>Create account.</span>
           </p>
+
         </div>
       ) : (
         <div className="container">
