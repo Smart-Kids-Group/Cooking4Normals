@@ -8,7 +8,7 @@ function Feed(props) {
     auth
       .signOut()
       .then((res) => {
-        props.history.push("/auth");
+        props.history.push("/sign-up");
         //do something else with res
       })
       .catch((err) => {
