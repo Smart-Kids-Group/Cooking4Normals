@@ -18,12 +18,14 @@ function Feed(props) {
 
   return (
     <>
-      <UserFeed />
-      <div className="main">
-        <h1>End of the feed, Happy Cooking!</h1>
-        <button onClick={logOut}>Log out</button>
+      <div className="bg">
+        <UserFeed />
+        <div className="main">
+          <h1>End of the feed, Happy Cooking!</h1>
+          <button onClick={logOut}>Log out</button>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
