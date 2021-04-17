@@ -7,13 +7,12 @@ import Nav from "../components/Nav";
 import SearchBar from "../components/SearchBar";
 import Footer from "../components/Footer/index";
 import SavedRecipe from "../components/SavedRecipe";
->>>>>>> Stashed changes
 
 function CookBook() {
   return (
     <>
         {/* <Nav /> */}
-        <div className="container mb-5 mt-5">
+        <div className="container bg mb-5 mt-5">
             <h1 className="text-center">Personal Cookbook</h1>
             <br></br>
         
