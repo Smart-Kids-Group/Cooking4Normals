@@ -12,19 +12,19 @@ function VideoSearch() {
 return (
   <>
 <form>
-              {/* <Container>
+              <Container>
                 <Row>
                   <Col size="xs-9 sm-10">
                     <Input
-                      name="RecipeSearch"
-                      value={recipeSearch}
-                      onChange={handleInputChange}
+                      name="VideoSearch"
+                      // value={recipeSearch}
+                      // onChange={handleInputChange}
                       placeholder="Search For a Recipe"
                     />
                   </Col>
                   <Col size="xs-3 sm-2">
                     <Button
-                      onClick={handleFormSubmit}
+                      // onClick={handleFormSubmit}
                       type="success"
                       className="input-lg"
                     >
@@ -32,7 +32,7 @@ return (
                     </Button>
                   </Col>
                 </Row>
-              </Container> */}
+              </Container>
             </form>
             </>
             )
