@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom"
-import { auth } from "../utils/firebase";
+import { auth } from "./firebase";
 
 export const ProtectedRoute = ({component: Component, ...rest}) => {
  const user = auth.currentUser;

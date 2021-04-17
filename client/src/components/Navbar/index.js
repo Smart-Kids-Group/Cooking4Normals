@@ -88,15 +88,6 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/auth'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Login
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
                 to='/profile'
                 className='nav-links'
                 onClick={closeMobileMenu}

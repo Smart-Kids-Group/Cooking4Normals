@@ -10,7 +10,7 @@ import Video from "./pages/Video";
 import SearchResults from "./pages/SearchResults";
 import CookBook from "./pages/Cookbook";
 import Navbar from "./components/Navbar";
-import {ProtectedRoute} from "./components/protectedRoute";
+import {ProtectedRoute} from "./utils/protectedRoute";
 import { auth } from './utils/firebase';
 
 
