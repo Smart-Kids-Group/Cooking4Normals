@@ -20,7 +20,7 @@ function SignIn() {
     <div className="signIn">
       <h1> Sign in to your account</h1>
       <input type="text" placeholder="Enter your email" value={email} onChange={e => setEmail(e.currentTarget.value)} />
-      <input type="password" placeholder="Emter your passwprd" value={password} onChange={e =>setPassword(e.currentTarget.value)} />
+      <input type="password" placeholder="Enter your password" value={password} onChange={e =>setPassword(e.currentTarget.value)} />
       <button onClick={signin}> Log In</button>
     </div>
   )
