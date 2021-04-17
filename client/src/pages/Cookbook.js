@@ -3,9 +3,6 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RecipeCard from "../components/RecipeCard";
 import UserRecipe from "../components/UserRecipe";
-<<<<<<< Updated upstream
-import Footer from "../components/Footer/index";
-=======
 import Nav from "../components/Nav";
 import SearchBar from "../components/SearchBar";
 import Footer from "../components/Footer/index";
