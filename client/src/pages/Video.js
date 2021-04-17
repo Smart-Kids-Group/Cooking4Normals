@@ -1,14 +1,17 @@
 import React from "react";
 import VideoSearch from "../components/VideoSearch";
 import VideoFeed from "../components/VideoFeed";
-import YTSearch from "youtube-api-search";
+import Footer from "../components/Footer/index";
 
 function Video() {
   return (
     <>
-    <VideoSearch />
-    <VideoFeed />
+      <div className="bg">
+        <VideoSearch />
+        <VideoFeed />
+        <Footer />
+      </div>
     </>
-  )
+  );
 }
 export default Video;
