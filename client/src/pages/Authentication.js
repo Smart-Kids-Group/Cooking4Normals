@@ -19,12 +19,12 @@ function Auth() {
         <div className='auth'>
             {authType === 'signIn' ?
                 <div className='container'>
-                    <SignUp />
+                    <SignIn />
                     <p>New here? <span onClick={() => setAuthType('signUp')}>Create account.</span></p>
                 </div>
                 :
                 <div className='container'>
-                    <SignIn />
+                    <SignUp />
                     <p>Have an account? <span onClick={() => setAuthType('signIn')}>Sign In.</span></p>
                 </div>
             }
