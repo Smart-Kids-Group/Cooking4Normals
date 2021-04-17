@@ -19,7 +19,7 @@ function HeroSection(props) {
           buttonStyle='btn--outline'
           buttonSize='btn--large'
           onClick={() => {
-            props.history.push("/auth");
+            props.history.push("/sign-up");
         }}
         >
           GET STARTED!
@@ -29,7 +29,7 @@ function HeroSection(props) {
           buttonStyle='btn--primary'
           buttonSize='btn--large'
           onClick={() => {
-            props.history.push("/auth");
+            props.history.push("/sign-up");
         }}
         >
           Log In

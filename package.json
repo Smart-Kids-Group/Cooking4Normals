@@ -26,6 +26,7 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.12.3",
     "node-sass": "^4.0.0",
-    "react-bootstrap": "^1.5.2"
+    "react-bootstrap": "^1.5.2",
+    "youtube-api-search": "^0.0.5"
   }
 }

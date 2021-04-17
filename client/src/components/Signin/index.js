@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { auth } from "../../utils/firebase.js"
 import { useHistory } from "react-router-dom";
 import "./signin.scss"
+import UserContext from "../../utils/UserContext.js";
 
 
 function SignIn() {
+
+  const { setUser } = useContext(UserContext);
+
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,8 +16,11 @@ function SignIn() {
   const signin = () => {
     auth.signInWithEmailAndPassword(email, password)
     .then ( res => {
+      setUser( {email:email, password: password} );
       history.push("/feed");
-    }).catch (err => {})
+    }).catch (err => {
+      console.log("Incorrect email or password.")
+    })
   }
 
   return (
