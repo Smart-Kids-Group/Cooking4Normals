@@ -19,7 +19,7 @@ function SignUp() {
     <div className="signUp">
       <h1> Register your account</h1>
       <input type="text" placeholder="Enter your email" value={email} onChange={e => setEmail(e.currentTarget.value)} />
-      <input type="password" placeholder="Emter your passwprd" value={password} onChange={e =>setPassword(e.currentTarget.value)} />
+      <input type="password" placeholder="Enter your password" value={password} onChange={e =>setPassword(e.currentTarget.value)} />
       <button onClick={signup}>Sign Up</button>
     </div>
   )

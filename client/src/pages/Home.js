@@ -1,7 +1,7 @@
 import React from "react";
 import '../App.css';
 import Footer from '../components/Footer/index';
-import HeroSection from '../components/HeroSection';
+import HeroSection from '../components/HeroSection/HeroSection';
 
 
 

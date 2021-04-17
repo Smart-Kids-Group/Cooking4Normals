@@ -14,7 +14,9 @@ import {ProtectedRoute} from "./components/protectedRoute";
 import { auth } from './utils/firebase';
 
 
+
 const App = (props) => {
+  
   
   useEffect(() => {
     auth.onAuthStateChanged(user => {
