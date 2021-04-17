@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Feed from "./pages/Feed";
@@ -12,11 +12,16 @@ import CookBook from "./pages/Cookbook";
 import Navbar from "./components/Navbar";
 import {ProtectedRoute} from "./utils/protectedRoute";
 import { auth } from './utils/firebase';
+import UserContext from "./utils/UserContext";
 
 
 
 const App = (props) => {
   
+ const [user, setUser] = useState({
+   email: "",
+   password:""
+ }) 
   
   useEffect(() => {
     auth.onAuthStateChanged(user => {
@@ -26,6 +31,7 @@ const App = (props) => {
 
 
   return (
+    <UserContext.Provider value = {{user, setUser}} >
     <Router>
       <div>
 
@@ -46,6 +52,7 @@ const App = (props) => {
         </Switch>
       </div>
     </Router>
+    </UserContext.Provider>
   );
 };
 
