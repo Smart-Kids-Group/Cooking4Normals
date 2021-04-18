@@ -13,14 +13,19 @@ import Navbar from "./components/Navbar";
 import {ProtectedRoute} from "./utils/protectedRoute";
 import { auth } from './utils/firebase';
 import UserContext from "./utils/UserContext";
+import RecipeContext from "./utils/RecipeContext";
 
 
 
 const App = (props) => {
+const [recipes, setRecipes] = useState([]);
   
  const [user, setUser] = useState({
    email: "",
-   password:""
+   password:"",
+   screenName: "",
+   fullName: "",
+   imageURL: ""
  }) 
   
   useEffect(() => {
@@ -32,6 +37,7 @@ const App = (props) => {
 
   return (
     <UserContext.Provider value = {{user, setUser}} >
+      <RecipeContext.Provider value = {{recipes, setRecipes}}>
     <Router>
       <div>
 
@@ -52,6 +58,7 @@ const App = (props) => {
         </Switch>
       </div>
     </Router>
+    </RecipeContext.Provider>
     </UserContext.Provider>
   );
 };

@@ -3,22 +3,22 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
-import Button from "react-bootstrap/Button"
 
-const RecipeCard = (props) => {
 
+const FullRecipe = (props) => {
+  console.log(props)
     return (
         <Col md={12}>
-            <Card className="mb-4 w-60 shadow-sm" page={props.page}>
+            {/* <Card className="mb-4 w-60 shadow-sm">
                 <Row>   
                 <Col md={3}>
                     {
-                        (props.data.thumbnail)
+                        (props.recipe.image)
                         ? <Card.Text 
                             className="float-left"
                         ><Image 
-                        src={props.data.thumbnail}
-                        alt="recipe title" 
+                        src={props.recipe.image}
+                        alt={props.recipe.name}
                         />
                         </Card.Text>
                         : <Card.Text
@@ -34,35 +34,43 @@ const RecipeCard = (props) => {
                     <Card.Title 
                         className="text-center"
                     >
-                        {props.data.title}
+                        {props.recipe.name}
                     </Card.Title>
                     <br />
                     {
-                        (props.data.description)
+                        (props.recipe.description)
                         ? <Card.Text 
                             className="float-left"
-                        > {props.data.description}
+                        > {props.recipe.description}
                         </Card.Text>
                         : null
                     }
-
-                    <Card.Text>
-                        {props.data.ingredients || "No ingredients listed."}
-                    </Card.Text>
+                    <ul>
+                    {
+                      (props.recipe.ingredients)
+                      ? props.recipe.ingredients.map((ingredient) => <li>{ingredient}</li>)
+                      : null
+                    }
+                    </ul>
+                    { 
+                      (props.recipe.href)
+                      ?
                     <a className="btn-primary float-right" rel="noreferrer noopener" target="_blank" href={props.href}>Link to Recipe Source</a>
-                    <Button 
-                                className="save-btn" 
-                                size="sm" 
-                                variant="outline-secondary" 
-                                onClick={() => props.handleRecipeSubmit(props.data.href)}
-                                >
-                                    Save
-                            </Button>
+                    : null
+                    }
+                    <ol>
+                    {
+                      (props.recipe.instructions)
+                      ? props.recipe.instructions.map(instruction => <li>{instruction}</li>)
+                      : null
+                    }
+                    </ol>
+                   
                     </Col>
                     </Row>
-            </Card>
+            </Card> */}
         </Col>
     );
 }
 
-export default RecipeCard;
+export default FullRecipe;
