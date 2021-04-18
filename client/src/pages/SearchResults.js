@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import RecipeCard from "../components/RecipeCard";
 import SearchBar from "../components/SearchBar";
 import API from "../utils/API";
 import Footer from "../components/Footer/index";
+import RecipeContext from "../utils/RecipeContext";
 // import { Link } from "react-router-dom";
 
 function SearchResults() {
   // Setting our component's initial state
-  const [recipes, setRecipes] = useState([]);
+  const { recipes, setRecipes } = useContext(RecipeContext)
   const [recipeSearch, setRecipeSearch] = useState({
     query: "q=pizza",
     nameSearch: "pizza",
@@ -22,8 +23,6 @@ function SearchResults() {
     API.searchRecipes(recipeSearch.query)
       .then((res) => {
         setRecipes(res.data.results);
-
-        console.log(recipes);
       })
       .catch((err) => console.log(err));
   }

@@ -1,20 +1,34 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Card from "react-bootstrap/Card";
-import Image from "react-bootstrap/Image";
+// import Card from "react-bootstrap/Card";
+// import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button"
+import MyEditor from '../AvatarEditor'
 
 
 function ProfileIntro(){
+
+    const updateProfilePic = () => {
+        return <MyEditor />
+    };
+
     return(
         <>
         <Row>
         <Col mid={4}>
-            <div>
+           <Row>
+               <Col><div>
                 <h1>My Profile</h1>
                 <img alt="userImage" src="http://via.placeholder.com/360x360"></img>
                 
             </div>
+            </Col> 
+            </Row>
+            <Button className="small" variant="secondary" onClick={updateProfilePic}>Edit Picture</Button>
+            <Row>
+
+            </Row>
         </Col>
         <Col mid={8} >
             <div>

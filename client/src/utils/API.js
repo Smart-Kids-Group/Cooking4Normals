@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export default {
+
+  export default {
+
   // search for new recipes
   searchRecipes: function(query){
     return axios({
@@ -8,9 +10,9 @@ export default {
     "url": `https://recipe-puppy.p.rapidapi.com/?${query}`,  
     "headers": {
         "x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
-        "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"}
-    })
-    },
+        "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"},
+  })
+},
     // gets all recipes from the DB
   getRecipes: function() {
     return axios.get("/api/recipes");
@@ -53,7 +55,12 @@ export default {
   },
 
   saveUser: function(user) {
-    return axios.post("/api/users/" + user);
+    let userData = {
+      fullName: user.fullName,
+      screenName: user.screenName,
+      imageURL: user.imageURL
+    }
+    return axios.post("/api/users/" + user.email, { userData });
   },
   
   // Saves a recipe to the database
