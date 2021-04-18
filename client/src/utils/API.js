@@ -37,6 +37,26 @@ export default {
       "data": recipeURL
     })
   },
+  
+  // Add User to Chat Engine
+  createChatUser: function(email,password){
+    return axios.request ({
+      "method": "post",
+      "url": "https://api.chatengine.io/users/",
+      "headers": {
+        "PRIVATE-KEY": "59100cef-4757-42cd-833f-eb357aaf89fc"
+      },
+      "data": {
+        "username": email,
+        "secret": password
+      }
+    })
+  },
+
+  saveUser: function(user) {
+    return axios.post("/api/users/" + user);
+  },
+  
   // Saves a recipe to the database
   saveRecipe: function(recipe) {
     let recipeData = {

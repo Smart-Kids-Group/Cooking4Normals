@@ -16,7 +16,6 @@ function Auth() {
     });
   }, []);
 
-
   return (
     <div className="auth bg">
       {authType === "signIn" ? (
