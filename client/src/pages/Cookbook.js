@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import UserRecipe from "../components/UserRecipe";
 import SearchBar from "../components/SearchBar";
 import Footer from "../components/Footer";
@@ -6,11 +6,12 @@ import SavedRecipe from "../components/SavedRecipe";
 import RecipeList from "../components/RecipelList"
 import Container from "react-bootstrap/Container"
 import API from "../utils/API";
+import RecipeContext from "../utils/RecipeContext";
 
  function CookBook() {
   // const [showUserRecipe, setShowUserRecipe] = useState(false);
   // const [showSearchBar, setShowSearchBar] = useState(false);
-  let recipes=[]; 
+  const { recipes, setRecipes } = useContext(RecipeContext)
 
  useEffect (() => {
    loadRecipes();
@@ -19,7 +20,7 @@ import API from "../utils/API";
   function loadRecipes() {
     API.getRecipes()
     .then (res => {
-      recipes = res.data;
+      setRecipes(res.data)
       console.log(recipes)
     })
     .catch((err) => console.log(err));
@@ -34,7 +35,7 @@ return (
 
           {/* <SearchBar />
           <UserRecipe /> */}
-          <RecipeList recipes={recipes}/>
+          <RecipeList data={recipes}/>
         </Container>
         <Footer />
     </>

@@ -8,7 +8,7 @@ import RecipeContext from "../utils/RecipeContext";
 
 function SearchResults() {
   // Setting our component's initial state
-  const { recipes, setRecipes } = useContext(RecipeContext)
+  const [recipes, setRecipes ] = useState([])
   const [recipeSearch, setRecipeSearch] = useState({
     query: "q=pizza",
     nameSearch: "pizza",
