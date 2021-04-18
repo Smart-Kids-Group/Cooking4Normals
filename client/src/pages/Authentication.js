@@ -14,7 +14,7 @@ function Auth() {
     auth.onAuthStateChanged((user) => {
       if (user) history.push("/feed");
     });
-  }, []);
+  }, [history]);
 
   return (
     <div className="auth bg">
