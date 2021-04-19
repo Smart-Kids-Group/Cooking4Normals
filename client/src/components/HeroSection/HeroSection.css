@@ -35,14 +35,14 @@ video {
 
   }
   
-  .hero-btns {
+  /* .hero-btns {
     margin-top: 32px;
   }
   
   .hero-btns .btn {
     margin: 6px;
     color: #fff;
-  }
+  } */
   
   
   @media screen and (max-width: 960px) {
@@ -65,9 +65,5 @@ video {
     .btn-mobile {
       display: block;
       text-decoration: none;
-    }
-  
-    .btn {
-      width: 100%;
     }
   }

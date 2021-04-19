@@ -30,7 +30,7 @@ function Footer() {
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
               C4N
-              <i class='fab fa-typo3' />
+              <i class="fas fa-pepper-hot"></i>
             </Link>
           </div>
           <small class='website-rights'>Cooking4Normals © 2020</small>

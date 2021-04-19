@@ -1,7 +1,8 @@
 import React from 'react';
 import { withRouter } from "react-router-dom"
-import { Button } from '../Button/index';
+import  Button from '../Button/Button';
 import './HeroSection.css';
+
 
 
 
@@ -9,11 +10,11 @@ import './HeroSection.css';
 function HeroSection(props) {
 
   return (
-    <div className='hero-container'>
+    <div className='hero-container '>
       <video src='/video/video2.mp4' autoPlay loop muted/>
       <h1>Flavor Awaits!</h1>
       <p>What are you waiting for?</p>
-      <div className='hero-btns'>
+      <div className='hero-btns' >
         <Button
           className='btns'
           buttonStyle='btn--outline'
@@ -22,7 +23,7 @@ function HeroSection(props) {
             props.history.push("/sign-up");
         }}
         >
-          GET STARTED!
+          Sign Up
         </Button>
         <Button
           className='btns'

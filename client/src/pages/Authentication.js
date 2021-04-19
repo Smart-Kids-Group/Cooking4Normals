@@ -12,11 +12,12 @@ function Auth() {
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      if (user) history.push("/feed");
+      if (user) history.push("/dashboard");
     });
   }, [history]);
 
   return (
+    <>
     <div className="auth bg">
       {authType === "signIn" ? (
         <div className="container">
@@ -36,8 +37,9 @@ function Auth() {
           </p>
         </div>
       )}
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 }
 

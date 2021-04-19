@@ -4,12 +4,26 @@ import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button"
+import './RecipeCard.css';
 
 const RecipeCard = (props) => {
 
+    const mystyle = {
+        color: "black",
+        backgroundColor: "rgba(250, 235, 215, 0.527)",
+        padding: "10px",
+        fontFamily: "Arial"
+      };
+
+      const savestyle = {
+        color: "black",
+        backgroundColor: "white 0.80)",
+        fontFamily: "Arial"
+      };
+
     return (
         <Col md={12}>
-            <Card className="mb-4 w-60 shadow-sm" page={props.page}>
+            <Card style={mystyle} className="mb-4 w-60 shadow-sm" page={props.page}>
                 <Row>   
                 <Col md={3}>
                     {
@@ -55,6 +69,7 @@ const RecipeCard = (props) => {
                                 size="sm" 
                                 variant="outline-secondary" 
                                 onClick={() => props.handleRecipeSubmit(props.data.href)}
+                                style={savestyle}
                                 >
                                     Save
                             </Button>

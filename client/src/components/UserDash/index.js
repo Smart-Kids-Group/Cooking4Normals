@@ -2,9 +2,9 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { withRouter } from "react-router-dom"
-import './UserFeed.css';
+import './UserDash.css';
 
-function UserFeed() {
+function UserDash() {
     return(
   <>
   <Row>
@@ -140,4 +140,4 @@ function UserFeed() {
   )
 }
 
-export default withRouter(UserFeed);
+export default withRouter(UserDash);
