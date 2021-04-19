@@ -19,6 +19,7 @@ import RecipeContext from "./utils/RecipeContext";
 
 const App = (props) => {
 const [recipes, setRecipes] = useState([]);
+const [recipeData, setRecipeData] = useState({})
   
  const [user, setUser] = useState({
    email: "",
@@ -37,7 +38,7 @@ const [recipes, setRecipes] = useState([]);
 
   return (
     <UserContext.Provider value = {{user, setUser}} >
-      <RecipeContext.Provider value = {{recipes, setRecipes}}>
+      <RecipeContext.Provider value = {{recipes, setRecipes, recipeData, setRecipeData}}>
     <Router>
       <div>
 

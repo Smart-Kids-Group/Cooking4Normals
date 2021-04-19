@@ -1,9 +1,9 @@
-import React, { useState, useEffect,useContext } from "react";
+import React, { useState, useEffect } from "react";
 import RecipeCard from "../components/RecipeCard";
 import SearchBar from "../components/SearchBar";
 import API from "../utils/API";
 import Footer from "../components/Footer/index";
-import RecipeContext from "../utils/RecipeContext";
+
 // import { Link } from "react-router-dom";
 
 function SearchResults() {
