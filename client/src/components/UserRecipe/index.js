@@ -7,16 +7,16 @@ const UserRecipe = () => {
       <div>
         <h2>Add your own recipe.</h2>
       <form>
-        <label for="RecipeName">Recipe Name</label>
+        <label name="RecipeName">Recipe Name</label>
         <input type="text" id ="RecipeName"
          value={name}
          onChange={(e) => setName (e.target.value)}
           />
           <br/>
-          <label for="ingredients">Ingredients</label>
+          <label name="ingredients">Ingredients</label>
           <textarea type="text" id ="instructions"/>
           <br/>
-        <label for="instructions">Cook Instructions</label>
+        <label name="instructions">Cook Instructions</label>
         <textarea type="text" id="instructions"/>
         <br/>
         <input type="submit"
