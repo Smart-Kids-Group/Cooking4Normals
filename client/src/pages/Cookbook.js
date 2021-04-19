@@ -28,25 +28,25 @@ import RecipeImport from "../components/RecipeImport";
 
   
 return (
-    
-        <Container className="bg" absolute>
-          <Row>
+    <>
+        
+          <Row className="bg absolute">
             <Col sm={4}>
              <RecipeImport />
              <UserRecipe />
             </Col>
             <Col sm={8}>
-        <Container >
-          <h1 className="text-center">Personal Cookbook</h1>
-          <br></br>
+               <Container >
+                  <h1 className="text-center">Personal Cookbook</h1>
+                  <br></br>
 
-          
-          <RecipeList data={recipes}/>
-        </Container>
+                  
+                  <RecipeList data={recipes}/>
+                </Container>
         </Col>
         </Row>
         <Footer />
-        </Container>
+        </>
   );
 }
 
