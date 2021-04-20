@@ -1,7 +1,11 @@
 import axios from "axios";
 
+const privateToken = process.env.REACT_APP_PRIVATE_API_KEY;
+const rapidToken = process.env.REACT_APP_RAPID_API_KEY
 
-  export default {
+export default {
+
+
 
   // search for new recipes
   searchRecipes: function(query){
@@ -9,7 +13,7 @@ import axios from "axios";
     "method": "GET",
     "url": `https://recipe-puppy.p.rapidapi.com/?${query}`,  
     "headers": {
-        "x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
+        "x-rapidapi-key": rapidToken,
         "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"},
   })
 },
@@ -32,7 +36,7 @@ import axios from "axios";
       "url": "https://mycookbook-io1.p.rapidapi.com/recipes/rapidapi",
       "headers": {
         "content-type": "text/plain",
-        "x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
+        "x-rapidapi-key": rapidToken,
         "x-rapidapi-host": "mycookbook-io1.p.rapidapi.com"
       },
       "data": recipeURL
@@ -45,7 +49,7 @@ import axios from "axios";
       "method": "post",
       "url": "https://api.chatengine.io/users/",
       "headers": {
-        "PRIVATE-KEY": "59100cef-4757-42cd-833f-eb357aaf89fc"
+        "PRIVATE-KEY": privateToken
       },
       "data": {
         "username": email,
