@@ -1,8 +1,12 @@
 import axios from "axios";
-const rapidToken = process.env.REACT_APP_RAPID_API_KEY
-const privateToken = process.env.REACT_APP_PRIVATE_API_KEY
 
-  export default {
+
+const privateToken = process.env.REACT_APP_PRIVATE_API_KEY;
+const rapidToken = process.env.REACT_APP_RAPID_API_KEY
+
+export default {
+
+
 
   // search for new recipes
   searchRecipes: function(query){
@@ -33,7 +37,9 @@ const privateToken = process.env.REACT_APP_PRIVATE_API_KEY
       "url": "https://mycookbook-io1.p.rapidapi.com/recipes/rapidapi",
       "headers": {
         "content-type": "text/plain",
-        "x-rapidapi-key":rapidToken,
+
+        "x-rapidapi-key": rapidToken,
+
         "x-rapidapi-host": "mycookbook-io1.p.rapidapi.com"
       },
       "data": recipeURL
