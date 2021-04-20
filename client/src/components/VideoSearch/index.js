@@ -5,37 +5,39 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
-function VideoSearch() {
+function VideoSearch(props) {
 
 
 
 return (
-  <>
-<form>
-              <Container>
-                <Row>
-                  <Col size="xs-9 sm-10">
-                    <Input
-                      name="VideoSearch"
-                      // value={recipeSearch}
-                      // onChange={handleInputChange}
-                      placeholder="Search For a Recipe"
-                    />
-                  </Col>
-                  <Col size="xs-3 sm-2">
-                    <Button
-                      // onClick={handleFormSubmit}
-                      type="success"
-                      className="input-lg"
-                    >
-                        Search
-                    </Button>
-                  </Col>
-                </Row>
-              </Container>
-            </form>
-            </>
-            )
-          }
+  <form>
+<Container>
+
+<Row> 
+<Col size="8">
+<label> Search By Keyword (Chinese, pizza, etc)
+<Input
+  
+  name="videoSearch"
+  onChange={props.handleInputChange}
+  placeholder="Cuisine"
+  />
+</label>
+</Col>
+<Col size="4">
+<FormBtn
+  onClick={props.handleSearchSubmit}
+  type="success"
+  className="input-lg"
+>
+    Search
+</FormBtn>
+</Col>
+</Row>
+</Container>
+</form>
+)
+}
+
           
           export default VideoSearch;

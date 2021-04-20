@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const privateToken = process.env.REACT_APP_PRIVATE_API_KEY;
 const rapidToken = process.env.REACT_APP_RAPID_API_KEY
 
@@ -36,7 +37,9 @@ export default {
       "url": "https://mycookbook-io1.p.rapidapi.com/recipes/rapidapi",
       "headers": {
         "content-type": "text/plain",
+
         "x-rapidapi-key": rapidToken,
+
         "x-rapidapi-host": "mycookbook-io1.p.rapidapi.com"
       },
       "data": recipeURL
@@ -78,5 +81,6 @@ export default {
       image: recipe.images[0]
     };
     return axios.post("/api/recipes", recipeData);
-  }
+  },
+ 
 };
