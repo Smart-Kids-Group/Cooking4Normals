@@ -1,8 +1,8 @@
 import React from "react";
-import "./Button.css";
+import "./Buttons.css";
 import { Link } from "react-router-dom";
 
-const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
+const Buttons = ({ children, type, onClick, buttonStyle, buttonSize }) => {
   const STYLES = ["btn--primary", "btn--outline", "btn--test"];
   const SIZES = ["btn--medium", "btn--large"];
 
@@ -14,8 +14,8 @@ const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
 
   return (
     <Link to="/sign-up" className="btn-mobile">
-      <button
-        className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+      <button 
+        className={`btns ${checkButtonStyle} ${checkButtonSize}`}
         onClick={onClick}
         type={type}
       >
@@ -25,4 +25,4 @@ const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
   );
 };
 
-export default Button;
+export default Buttons;
