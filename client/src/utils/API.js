@@ -1,6 +1,6 @@
 import axios from "axios";
-import YTSearch from "youtube-api-search";
-
+const rapidToken = process.env.REACT_APP_RAPID_API_KEY
+const privateToken = process.env.REACT_APP_PRIVATE_API_KEY
 
   export default {
 
@@ -10,7 +10,7 @@ import YTSearch from "youtube-api-search";
     "method": "GET",
     "url": `https://recipe-puppy.p.rapidapi.com/?${query}`,  
     "headers": {
-        "x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
+        "x-rapidapi-key": rapidToken,
         "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"},
   })
 },
@@ -33,7 +33,7 @@ import YTSearch from "youtube-api-search";
       "url": "https://mycookbook-io1.p.rapidapi.com/recipes/rapidapi",
       "headers": {
         "content-type": "text/plain",
-        "x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
+        "x-rapidapi-key":rapidToken,
         "x-rapidapi-host": "mycookbook-io1.p.rapidapi.com"
       },
       "data": recipeURL
@@ -46,7 +46,7 @@ import YTSearch from "youtube-api-search";
       "method": "post",
       "url": "https://api.chatengine.io/users/",
       "headers": {
-        "PRIVATE-KEY": "59100cef-4757-42cd-833f-eb357aaf89fc"
+        "PRIVATE-KEY": privateToken
       },
       "data": {
         "username": email,
@@ -76,9 +76,5 @@ import YTSearch from "youtube-api-search";
     };
     return axios.post("/api/recipes", recipeData);
   },
-  searchVideos: function(query) {
-      YTSearch({key: "AIzaSyDHMkMPz8J_92HuAy0h_uezsoFRGqa_7mM", term: query}, (videos) => {
-       return videos;
-      })
-    }
+ 
 };

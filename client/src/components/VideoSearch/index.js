@@ -14,7 +14,7 @@ return (
 <Container>
 
 <Row> 
-<Col size="12">
+<Col size="8">
 <label> Search By Keyword (Chinese, pizza, etc)
 <Input
   
@@ -24,14 +24,7 @@ return (
   />
 </label>
 </Col>
-<Col size="2">
-<label>Do you Dare?</label>
-<Button variant="danger"
-  onClick={props.handleRandom}>I dare?</Button>
-</Col>
-</Row>
-<Row>
-<Col>
+<Col size="4">
 <FormBtn
   onClick={props.handleSearchSubmit}
   type="success"
