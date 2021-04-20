@@ -1,9 +1,9 @@
 import React from "react";
 import { auth } from "../utils/firebase";
-import UserFeed from "../components/UserFeed/index";
+import UserDash from "../components/UserDash/index";
 import Footer from "../components/Footer/index";
 
-function Feed(props) {
+function Dashboard(props) {
   const logOut = () => {
     auth
       .signOut()
@@ -19,7 +19,7 @@ function Feed(props) {
   return (
     <>
       <div className="bg">
-        <UserFeed />
+        <UserDash />
         <div className="main">
           <h1>End of the feed, Happy Cooking!</h1>
           <button onClick={logOut}>Log out</button>
@@ -30,4 +30,4 @@ function Feed(props) {
   );
 }
 
-export default Feed;
+export default Dashboard;

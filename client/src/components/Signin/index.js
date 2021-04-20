@@ -17,7 +17,7 @@ function SignIn() {
     auth.signInWithEmailAndPassword(email, password)
     .then ( res => {
       setUser( {email:email, password: password} );
-      history.push("/feed");
+      history.push("/dashboard");
     }).catch (err => {
       console.log("Incorrect email or password.")
     })

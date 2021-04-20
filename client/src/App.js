@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Feed from "./pages/Feed";
+import Dashboard from "./pages/Dashboard";
 import Chat from "./pages/Chat";
 import Home from "./pages/Home";
 import Auth from "./pages/Authentication";
@@ -53,7 +53,7 @@ const [recipeData, setRecipeData] = useState({})
           <Route exact path="/sign-up">
             <Auth />
           </Route>
-          <ProtectedRoute exact path="/feed" component={Feed} />
+          <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/profile" component={Profile} />
           <ProtectedRoute exact path="/video" component={Video} />
           <ProtectedRoute exact path="/search" component={SearchResults} />
