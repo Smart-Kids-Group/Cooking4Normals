@@ -1,0 +1,30 @@
+.BioDiv{
+    width:500px;
+    text-align: justify;
+    padding-right:30px;
+}
+.bioHeader{
+    text-align: center;
+}
+.end{
+    text-align:center;
+   }
+.image-container {
+    flex-direction: column;
+    text-align: center;
+    padding-left:30px;
+}
+.picHeader{
+    text-align: justify;
+    padding-left:90px;
+}
+.proPic{
+    border-radius:50%;
+
+}
+.UserInfo{
+    width:500px;
+    text-align: justify;
+}
+
+

@@ -25,11 +25,13 @@
     "firebase": "^8.4.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.12.3",
+    "morgan": "^1.10.0",
     "node-sass": "^4.0.0",
     "react-avatar-editor": "^11.1.0",
     "react-bootstrap": "^1.5.2",
     "react-dropzone": "^11.3.2",
     "react-use-state-with-callback": "^1.0.2",
+    "react-youtube": "^7.13.1",
     "youtube-api-search": "^0.0.5"
   }
 }
