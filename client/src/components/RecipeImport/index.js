@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button";
 import API from "../../utils/API";
+import "./style.css";
 
 const RecipeImport = () => {
   
@@ -27,7 +28,7 @@ const RecipeImport = () => {
 
   return(
     <Container>
-      <Form>
+      <Form class="Sub">
         <Form.Group controlId="formBasicEmail">
           <Form.Label>To import a recipe from anywhere on the web, paste it here! </Form.Label>
           <Form.Control type="text" placeholder="Paste your link here" onChange={handleInputChange}/>

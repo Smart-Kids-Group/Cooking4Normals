@@ -1,0 +1,27 @@
+.raf-follow-button {
+  display: inline-flex;
+  border: 1px solid $info;
+  margin: 3px;
+  color: $info;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 10px;
+  border-radius: 100px;
+  min-width: 120px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.raf-follow-button:hover,
+.raf-follow-button--active {
+  background: $info;
+  color: $white;
+}
+
+.raf-follow-button:focus,
+.raf-follow-button:active,
+.raf-follow-button--active:focus,
+.raf-follow-button--active:active {
+  box-shadow: 0 0 0 3px $info;
+}

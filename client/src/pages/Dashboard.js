@@ -20,9 +20,9 @@ function Dashboard(props) {
     <>
       <div className="bg">
         <UserDash />
-        <div className="main">
+        <div className="main" class="Fed">
           <h1>End of the feed, Happy Cooking!</h1>
-          <button onClick={logOut}>Log out</button>
+          <button class="logout" onClick={logOut}>Log out</button>
         </div>
         <Footer />
       </div>

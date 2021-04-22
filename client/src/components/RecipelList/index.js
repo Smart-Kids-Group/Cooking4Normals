@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import FullRecipe from "../FullRecipe";
 import RecipeContext from "../../utils/RecipeContext";
+import "./style.css";
 
 
 function RecipeList(props){
@@ -20,7 +21,7 @@ function RecipeList(props){
   return(
     <Container>
       <Row>
-      <Col sm={4}>
+      <Col sm={1}>
     <ListGroup>
      {props.data
           ? props.data.map((recipe, i) => (
@@ -34,7 +35,7 @@ function RecipeList(props){
           : null}
     </ListGroup>
     </Col>
-    <Col sm={8}>
+    <Col sm={11}>
       <FullRecipe/>
     </Col>
     </Row>

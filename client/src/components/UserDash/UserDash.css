@@ -1,12 +1,36 @@
-p {
+.Ps {
     text-align: center;
     width: 35%;
     margin-left: 30%;
 }
 
-h1, h3{
+.Hs{
     text-align: center;
     width: 45%;
     margin-left: 25%;
     
 }
+
+.post {
+    min-width: 275px;
+    max-width: 500px;
+    margin: 15px;
+    padding: 10px;
+  }
+
+  .logout {
+    background-color: black;
+    color: white;
+    border-radius: 10%;
+    letter-spacing: 1.5px;
+    padding: 5px;
+
+  }
+
+  .Fed{
+    text-align: center;
+  }
+
+  .StreamApp {
+width: 30%;
+  }

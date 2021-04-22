@@ -1,9 +1,10 @@
 import React, {useState} from "react";
+import "./style.css";
 
 const UserRecipe = () => {
     const [name, setName] = useState("")
   return (
-    <div className="App">
+    <div className="App" class="Add">
       <div>
         <h2>Add your own recipe.</h2>
       <form>
@@ -19,7 +20,7 @@ const UserRecipe = () => {
         <label name="instructions">Cook Instructions</label>
         <textarea type="text" id="instructions"/>
         <br/>
-        <input type="submit"
+        <input type="submit" class="buut"
         value="Submit"
         
         />
