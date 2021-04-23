@@ -4,8 +4,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import VideoFeed from "../VideoFeed"
 import VideoCard from "../VideoCard"
-import ListGroup from "react-bootstrap/ListGroup";
-import FullRecipe from "../FullRecipe";
 
 
 function VideoList(props){
@@ -19,7 +17,6 @@ function VideoList(props){
   }
 
   return(
-    <Container>
       <Row>
       <Col sm={5}>
     
@@ -38,7 +35,6 @@ function VideoList(props){
     
     </Col>
     </Row>
-    </Container>
 
   )
       }

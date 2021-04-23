@@ -6,7 +6,7 @@ import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button"
 
 const VideoCard = (props) => {
-
+console.log(props)
     return (
         <Col md={12}>
             <Card className="mb-4 w-60 shadow-sm" >
@@ -17,7 +17,7 @@ const VideoCard = (props) => {
                         ? <Card.Text 
                             className="float-left"
                         ><Image 
-                        src={props.data.snippet.thumbnails.default}
+                        src={props.data.snippet.thumbnails.default.url}
                         alt={props.data.snippet.title}
                         />
                         </Card.Text>
