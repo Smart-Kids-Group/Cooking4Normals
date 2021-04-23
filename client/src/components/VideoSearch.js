@@ -18,12 +18,12 @@ function VideoSearch(props) {
               <Input
                 name="videoSearch"
                 className="videoSearch"
-                onChange={props.handleInputChange}
+                onChange={event => props.handleInputChange(event)}
                 placeholder="Cuisine"
               />
             </label>
             <FormBtn
-              onClick={props.handleSearchSubmit}
+              onClick={event => props.handleSearchSubmit(event)}
               type="success"
               className="input-lg"
               id="video-search-button"
