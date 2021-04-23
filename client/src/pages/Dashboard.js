@@ -8,7 +8,7 @@ function Dashboard() {
     <>
       <div className="bg">
         <UserDash />
-        <div className="main" class="Fed">
+        <div className="main Fed">
           <h1>End of the feed, Happy Cooking!</h1>
         </div>
         <Footer />

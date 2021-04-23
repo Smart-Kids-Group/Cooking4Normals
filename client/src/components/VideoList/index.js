@@ -2,9 +2,9 @@ import React, {  useState } from "react";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import VideoFeed from "../VideoFeed"
 import ListGroup from "react-bootstrap/ListGroup";
 import FullRecipe from "../FullRecipe";
-import "./style.css";
 
 
 function RecipeList(props){
@@ -21,7 +21,7 @@ function RecipeList(props){
     <Container>
       <Row>
       <Col sm={3}>
-    <ListGroup>
+    {/* <ListGroup>
      {props.data
           ? props.data.map((recipe, i) => (
               <ListGroup.Item href={`#${recipe.name}`} 
@@ -33,10 +33,10 @@ function RecipeList(props){
               </ListGroup.Item>
             ))
           : null}
-    </ListGroup>
+    </ListGroup> */}
     </Col>
     <Col sm={9}>
-      <FullRecipe {...props} indexNum={recipeKey}/>
+      <VideoFeed {...props} indexNum={recipeKey}/>
     
     </Col>
     </Row>

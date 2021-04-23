@@ -1,0 +1,17 @@
+#nameSearch {
+  border: 1px solid rgb(121, 121, 121);
+  border-radius: 15px;
+  width: 250px;
+}
+
+#ingredientSearch {
+  border: 1px solid rgb(121, 121, 121);
+  border-radius: 15px;
+  width: 250px;
+}
+
+#search-page-button {
+  border: 1px solid rgb(121, 121, 121);
+  margin-left: 10px;
+  border-radius: 15px;
+}

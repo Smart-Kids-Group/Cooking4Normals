@@ -1,81 +1,59 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
-import RecipeContext from "../../utils/RecipeContext";
-import API from "../../utils/API";
 
-const FullRecipe = () => {
-  const { recipeData, setRecipeData } = useContext(RecipeContext);
 
-  useEffect(() => {
-    loadRecipes();
-  }, []);
-
-  function loadRecipes() {
-    API.getRecipe(recipeData.name)
-      .then((res) => {
-        setRecipeData(res.data);
-        console.log(recipeData);
-      })
-      .catch((err) => console.log(err));
-  }
-
+const FullRecipe = (props) => {
+ let i = props.indexNum
+ console.log(props.data[i])
+ const recipe = props.data[i];
   return (
-    <Col md={12}>
+  
+    
+  <Col md={12}>
+    {props.data[i]?
       <Card className="mb-4 w-60 shadow-sm">
         <Row>
-          <Col md={3} class="Impo">
-            {recipeData.image ? (
-              <Card.Text className="float-left">
-                <Image src={recipeData.image} alt={recipeData.name} />
-              </Card.Text>
-            ) : (
-              <Card.Text className="float-left">
-                <Image
-                  src="https://via.placeholder.com/200"
-                  alt="placeholder"
-                />
-              </Card.Text>
-            )}
-          </Col>
-          <Col md={9} class="Impo">
-            <Card.Title className="text-center">{recipeData.name}</Card.Title>
+          <Col md={12} class="Impo">
+            <Card.Title className="text-center">{recipe.name}</Card.Title>
             <br />
-            {recipeData.description ? (
+            {recipe.description ? (
               <Card.Text className="float-left">
                 {" "}
-                {recipeData.description}
+                {recipe.description}
               </Card.Text>
             ) : null}
             <ul>
-              {recipeData.ingredients
-                ? recipeData.ingredients.map((ingredient) => (
-                    <li>{ingredient}</li>
+              {recipe.ingredients
+                ? recipe.ingredients.map((ingredient, i) => (
+                    <li key={i}>{ingredient}</li>
                   ))
                 : null}
             </ul>
-            {recipeData.href ? (
+            {recipe.href ? (
               <a
                 className="btn-primary float-right"
                 rel="noreferrer noopener"
                 target="_blank"
-                href={recipeData.href}
+                href={recipe.href}
               >
                 Link to Recipe Source
               </a>
             ) : null}
             <ol>
-              {recipeData.instructions
-                ? recipeData.instructions.map((instruction) => (
-                    <li>{instruction}</li>
+              {recipe.instructions.steps
+                ? recipe.instructions.steps.map((instruction,i) => (
+                    <li key={i}>{instruction}</li>
                   ))
                 : null}
             </ol>
           </Col>
         </Row>
       </Card>
+    :
+    null }
     </Col>
   );
 };
