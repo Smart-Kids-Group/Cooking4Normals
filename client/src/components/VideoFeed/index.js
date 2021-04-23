@@ -1,11 +1,7 @@
 import React from "react";
-import Thumbnail from "../Thumbnail";
-import { Container, Row, Col } from "../Grid";
 import YouTube from 'react-youtube';
 
-const VideoFeed = () => {
-
-class Example extends React.Component {
+class VideoFeed extends React.Component {
   render() {
     const opts = {
       height: '390',
@@ -25,7 +21,6 @@ class Example extends React.Component {
   }
 }
 
-}
 
 
 //   return(

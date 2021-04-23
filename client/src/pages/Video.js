@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import VideoSearch from "../components/VideoSearch";
-import VideoFeed from "../components/VideoFeed";
+import VideoSearch from "../components/VideoSearch/VideoSearch";
+import VideoList from "../components/VideoList";
 import Footer from "../components/Footer/index";
 import API from "../utils/API";
 import YTSearch from "youtube-api-search";
@@ -45,7 +45,7 @@ function Video() {
       <VideoSearch 
         handleInputChange= {handleInputChange} 
         handleSearchSubmit= {handleSearchSubmit}/>
-    {/* <VideoFeed /> */}
+    <VideoList />
         <Footer />
       </div>
     </>
