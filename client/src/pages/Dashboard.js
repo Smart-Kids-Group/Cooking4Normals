@@ -3,7 +3,6 @@ import UserDash from "../components/UserDash/index";
 import Footer from "../components/Footer/index";
 
 function Dashboard() {
-
   return (
     <>
       <div className="bg">
