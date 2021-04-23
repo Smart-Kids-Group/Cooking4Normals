@@ -1,14 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Buttons from "../Button/Buttons";
+import UserContext from "../../utils/UserContext";
+import { auth } from "../../utils/firebase";
+
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-
+  const {user} = useContext(UserContext);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  const logOut = () => {
+    auth
+      .signOut()
+      .then((res) => {
+        props.history.push("/sign-up");
+        //do something else with res
+      })
+      .catch((err) => {
+        //do something else with err
+      });
+    }
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -26,6 +40,7 @@ function Navbar() {
 
   return (
     <>
+  
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
@@ -87,7 +102,9 @@ function Navbar() {
                 Profile
               </Link>
             </li>
-            <li className="nav-item">
+          {(!user)?
+          
+          <li className="nav-item">
               <Link
                 to="/sign-up"
                 className="nav-links"
@@ -96,6 +113,16 @@ function Navbar() {
                 Login
               </Link>
             </li>
+            :
+            <li className="nav-item">
+              <Link
+                to="/dashboard"
+                className="nav-links"
+                onClick={logOut}
+              >
+                Logout
+              </Link>
+            </li>}
           </ul>
         </div>
       </nav>
