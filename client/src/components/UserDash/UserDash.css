@@ -1,14 +1,23 @@
+<<<<<<< HEAD
 .Ps {
+=======
+/* p {
+>>>>>>> c026b719a9a5044e573b69a1cb4509c691578050
     text-align: center;
     width: 35%;
     margin-left: 30%;
-}
+} */
 
+<<<<<<< HEAD
 .Hs{
+=======
+/* h1, h3{
+>>>>>>> c026b719a9a5044e573b69a1cb4509c691578050
     text-align: center;
     width: 45%;
     margin-left: 25%;
     
+<<<<<<< HEAD
 }
 
 .post {
@@ -34,3 +43,6 @@
   .StreamApp {
 width: 30%;
   }
+=======
+} */
+>>>>>>> c026b719a9a5044e573b69a1cb4509c691578050
