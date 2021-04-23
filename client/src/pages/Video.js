@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import VideoSearch from "../components/VideoSearch";
-import VideoFeed from "../components/VideoFeed";
+import VideoSearch from "../components/VideoSearch/VideoSearch";
+import VideoList from "../components/VideoList";
 import Footer from "../components/Footer/index";
 import API from "../utils/API";
 import YTSearch from "youtube-api-search";
@@ -8,7 +8,9 @@ const googleToken = process.env.REACT_APP_GOOGLE_API_KEY
 
 function Video() {
 
-  const [videos, setVideos] = useState([]);
+  const [videoState, setVideoState] = useState({
+    videos: [],
+    displayVideo: null});
   const [videoSearch, setVideoSearch] = useState("bread");
 
   useEffect(() => {
@@ -18,17 +20,21 @@ function Video() {
   function handleInputChange(event) {
     const { value } = event.target;
        setVideoSearch(value)
+       
 };
 
   function handleSearchSubmit(event){
     event.preventDefault();
    
-      searchVideos();
+      searchVideos(videoSearch);
     };
 
-    function searchVideos(query) {
+   function searchVideos(query) {
       YTSearch({key: googleToken, term: query}, (videos) => {
-        setVideos(videos);
+        setVideoState({
+          videos: videos,
+          displayVideo: videos[0]
+        });
           console.log(videos)
       })
     }
@@ -36,8 +42,10 @@ function Video() {
   return (
     <>
       <div className="bg">
-      <VideoSearch handleInputChange= {handleInputChange}        handleSearchSubmit= {handleSearchSubmit}/>
-    {/* <VideoFeed /> */}
+      <VideoSearch 
+        handleInputChange= {handleInputChange} 
+        handleSearchSubmit= {handleSearchSubmit}/>
+    <VideoList />
         <Footer />
       </div>
     </>

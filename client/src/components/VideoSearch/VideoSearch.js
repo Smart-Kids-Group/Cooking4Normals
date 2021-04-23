@@ -1,9 +1,8 @@
 import React from "react";
-import { Input, FormBtn } from "./Form";
+import { Input, FormBtn } from "./../Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 import './VideoSearch.css';
 
 function VideoSearch(props) {
@@ -18,12 +17,12 @@ function VideoSearch(props) {
               <Input
                 name="videoSearch"
                 className="videoSearch"
-                onChange={props.handleInputChange}
+                onChange={event => props.handleInputChange(event)}
                 placeholder="Cuisine"
               />
             </label>
             <FormBtn
-              onClick={props.handleSearchSubmit}
+              onClick={event => props.handleSearchSubmit(event)}
               type="success"
               className="input-lg"
               id="video-search-button"

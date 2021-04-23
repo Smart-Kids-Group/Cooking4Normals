@@ -1,38 +1,36 @@
-import { useState } from 'react';
-import React from 'react';
-import { sendMessage, isTyping } from 'react-chat-engine'
+import React, { useState } from 'react';
 import { SendOutlined, PictureOutlined } from '@ant-design/icons';
-
+import { sendMessage, isTyping } from 'react-chat-engine';
 
 const MessageForm = (props) => {
-    const [value, setValue] = useState(' ');
+    const [value, setValue] = useState('');
     const { chatId, creds } = props;
+
+    const handleChange = (event) => {
+        setValue(event.target.value);
+
+        isTyping(props, chatId);
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
         const text = value.trim();
 
-        if(text.length > 0) sendMessage(creds, chatId, { text });
+        if (text.length > 0) {
+            sendMessage(creds, chatId, { text });
+        }
 
         setValue('');
-    }
-
-    const handleChange = (event) => {
-        setValue(event.target.value);
-
-        isTyping(props, chatId);
-
-
-    }
+    };
 
     const handleUpload = (event) => {
-        sendMessage(creds, chatId, { file: event.target.files, text: '' })
-    }
+        sendMessage(creds, chatId, { files: event.target.files, text: '' });
+    };
 
     return (
         <form className="message-form" onSubmit={handleSubmit}>
-            <input 
+            <input
                 className="message-input"
                 placeholder="Send a message..."
                 value={value}
@@ -41,21 +39,21 @@ const MessageForm = (props) => {
             />
             <label htmlFor="upload-button">
                 <span className="image-button">
-                    <PictureOutlined className="pictue-icon"/>
+                    <PictureOutlined className="picture-icon" />
                 </span>
             </label>
-            <input 
+            <input
                 type="file"
                 multiple={false}
                 id="upload-button"
                 style={{ display: 'none' }}
-                onChange={handleUpload}
+                onChange={handleUpload.bind(this)}
             />
             <button type="submit" className="send-button">
-                <SendOutlined className="send-icon"/>
-                </button> 
+                <SendOutlined className="send-icon" />
+            </button>
         </form>
-    )
-}
+    );
+};
 
 export default MessageForm;

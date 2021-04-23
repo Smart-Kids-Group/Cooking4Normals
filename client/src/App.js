@@ -17,9 +17,8 @@ import RecipeContext from "./utils/RecipeContext";
 
 
 
+
 const App = (props) => {
-  const rapidToken = process.env.REACT_APP_RAPID_API_KEY
-  console.log(rapidToken)
 
   const [recipes, setRecipes] = useState([]);
 const [recipeData, setRecipeData] = useState({})
