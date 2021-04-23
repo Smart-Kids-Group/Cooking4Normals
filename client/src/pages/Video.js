@@ -45,7 +45,7 @@ function Video() {
       <VideoSearch 
         handleInputChange= {handleInputChange} 
         handleSearchSubmit= {handleSearchSubmit}/>
-    <VideoList />
+    <VideoList data={videoState}/>
         <Footer />
       </div>
     </>
