@@ -28,7 +28,7 @@ const RecipeImport = () => {
 
   return(
     <Container>
-      <Form class="Sub">
+      <Form className="Sub">
         <Form.Group controlId="formBasicEmail">
           <Form.Label>To import a recipe from anywhere on the web, paste it here! </Form.Label>
           <Form.Control type="text" placeholder="Paste your link here" onChange={handleInputChange}/>
