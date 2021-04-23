@@ -22,7 +22,7 @@ function Dashboard(props) {
         <UserDash />
         <div className="main" class="Fed">
           <h1>End of the feed, Happy Cooking!</h1>
-          <button class="logout" onClick={logOut}>Log out</button>
+          <button className="logout" onClick={logOut}>Log out</button>
         </div>
         <Footer />
       </div>
