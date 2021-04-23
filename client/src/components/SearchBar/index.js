@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import './searchBar.css';
 
 function SearchBar (props) {
 
@@ -12,41 +13,39 @@ function SearchBar (props) {
       <Container>
 
    <Row> 
-    <Col size="5">
+    <Col size="4">
       <label> Search By Keyword (Chinese, pizza, etc)
       <Input
-        
         name="nameSearch"
         onChange={props.handleInputChange}
         placeholder="Cuisine"
+        id="nameSearch"
         />
       </label>
     </Col>
-    <Col size="5">
+    <Col size="6">
       <label> Search by Ingredient
       <Input
         name="ingredientSearch"
         onChange={props.handleInputChange}
         placeholder="Ingredient"
+        id="ingredientSearch"
         />
       </label>
+      <FormBtn
+        onClick={props.handleSearchSubmit}
+        type="success"
+        className="input-lg"
+        id="search-page-button"
+      >
+          Search
+      </FormBtn>
     </Col>
     <Col size="2">
       <label>Do you Dare?</label>
       <Button variant="danger"
         onClick={props.handleRandom}>I dare?</Button>
     </Col>
-    </Row>
-    <Row>
-      <Col>
-      <FormBtn
-        onClick={props.handleSearchSubmit}
-        type="success"
-        className="input-lg"
-      >
-          Search
-      </FormBtn>
-      </Col>
     </Row>
 </Container>
     </form>
