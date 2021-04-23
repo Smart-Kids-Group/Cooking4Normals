@@ -4,24 +4,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import FullRecipe from "../FullRecipe";
-import RecipeContext from "../../utils/RecipeContext";
-import API from "../../utils/API";
 import "./style.css";
 
 
 function RecipeList(props){
-  // const [recipeData, setRecipeData ] = useState({})
   const [recipeKey, setRecipeKey] = useState(0)
 
   function handleClick(event) {
     const { key } = event.target.dataset;
-    // console.log (name, key)
-    // let recipeName = name;
-    //   API.getRecipe(recipeName)
-    //   .then((res) => {
-    //     setRecipeData(res.data);
-    //   })
-    //   .catch((err) => console.log(err));
       setRecipeKey(key);
       console.log(recipeKey)
 
