@@ -15,6 +15,11 @@ let userSchema = new Schema({
     trim: true,
   },
 
+  fullName: {
+    type: String,
+    trim:true
+  },
+  
   password: {
     type: String,
     trim: true,
