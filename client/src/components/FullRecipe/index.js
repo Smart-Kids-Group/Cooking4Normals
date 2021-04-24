@@ -42,8 +42,8 @@ const FullRecipe = (props) => {
               </a>
             ) : null}
             <ol>
-              {recipe.instructions.steps
-                ? recipe.instructions.steps.map((instruction,i) => (
+              {recipe.instructions[0].steps
+                ? recipe.instructions[0].steps.map((instruction,i) => (
                     <li key={i}>{instruction}</li>
                   ))
                 : null}
