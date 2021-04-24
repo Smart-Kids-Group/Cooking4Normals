@@ -9,7 +9,7 @@ import "./searchBar.css";
 function SearchBar(props) {
   return (
     <form>
-      <Container class="searchbar">
+      <Container className="searchbar">
         <Row>
           <Col size="4">
             <label>

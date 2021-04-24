@@ -8,7 +8,7 @@ import "./RecipeCard.css";
 const RecipeCard = (props) => {
   const mystyle = {
     color: "black",
-    backgroundColor: "rgba(250, 235, 215, 0.527)",
+    backgroundColor: "rgba(250, 235, 215, 0.60)",
     padding: "10px",
     fontFamily: "Arial",
   };
@@ -17,6 +17,7 @@ const RecipeCard = (props) => {
     color: "black",
     backgroundColor: "white 0.80)",
     fontFamily: "Arial",
+    fontSize: "17px"
   };
 
   return (
@@ -40,7 +41,8 @@ const RecipeCard = (props) => {
               className="btn-outline-secondary float-right Link-butt"
               rel="noreferrer noopener"
               target="_blank"
-              href={props.href}
+              href={props.data.href}
+              
             >
               Link to Recipe Source
             </a>
