@@ -10,15 +10,20 @@ text-align: center;
 
     margin-left: 300px;
     border: solid;
-    border-radius: 7%;
-
+    border-radius: .2rem;
+    
 
 }
 
 .Link-butt {
     margin-right: 300px;
-    background-color: transparent;
-    border: solid;
-    border-radius: 7%;
+    background-color: white (0.80);
+    border: solid 1px;
+    border-radius: .2rem;
+    padding: 2px;
+    color: "black";
+    font-family: "Arial";
+    font-size: "17px";
+
 
 }
