@@ -2,7 +2,6 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
-import Image from "react-bootstrap/Image";
 
 
 const FullRecipe = (props) => {
@@ -16,7 +15,7 @@ const FullRecipe = (props) => {
     {props.data[i]?
       <Card className="mb-4 w-60 shadow-sm">
         <Row>
-          <Col md={12} class="Impo">
+          <Col md={12} className="Impo">
             <Card.Title className="text-center">{recipe.name}</Card.Title>
             <br />
             {recipe.description ? (
