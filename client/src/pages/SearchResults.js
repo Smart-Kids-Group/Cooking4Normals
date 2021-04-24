@@ -4,8 +4,6 @@ import SearchBar from "../components/SearchBar";
 import API from "../utils/API";
 import Footer from "../components/Footer/index";
 
-// import { Link } from "react-router-dom";
-
 function SearchResults() {
   // Setting our component's initial state
   const [recipes, setRecipes ] = useState([])

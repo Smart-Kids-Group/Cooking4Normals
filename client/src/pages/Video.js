@@ -34,7 +34,6 @@ function Video() {
           videos: videos,
           displayVideo: videos[0]
         });
-          console.log(videos)
       })
     }
 

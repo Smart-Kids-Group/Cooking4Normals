@@ -13,7 +13,7 @@ function RecipeList(props){
   function handleClick(event) {
     const { key } = event.target.dataset;
       setRecipeKey(key);
-      console.log(recipeKey)
+      
 
   }
 
