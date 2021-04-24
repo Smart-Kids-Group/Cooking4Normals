@@ -3,7 +3,8 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
-import Button from "react-bootstrap/Button"
+import Button from "react-bootstrap/Button";
+import './VideoCard.css';
 
 const VideoCard = (props) => {
 console.log(props)
@@ -11,12 +12,13 @@ console.log(props)
         <Col md={12}>
             <Card className="mb-4 w-60 shadow-sm" >
                 <Row>   
-                <Col md={3}>
+                <Col md={4}>
                     {
                         (props.data.snippet.thumbnails.default)
                         ? <Card.Text 
                             className="float-left"
                         ><Image 
+                        className="card-img"
                         src={props.data.snippet.thumbnails.default.url}
                         alt={props.data.snippet.title}
                         />
@@ -30,7 +32,7 @@ console.log(props)
                         </Card.Text>
                     }
                     </Col>
-                    <Col md={9}>
+                    <Col md={8}>
                     <Card.Title 
                         className="text-center"
                     >
@@ -45,9 +47,11 @@ console.log(props)
                         </Card.Text>
                         : null
                     }
-
                     
-                    <a className="btn-primary float-right" rel="noreferrer noopener" target="_blank" href={props.href}></a>
+                    </Col>
+                    </Row>
+                    <Row>
+                    <Col md={12}>
                     <Button 
                                 className="save-btn" 
                                 size="sm" 
@@ -57,7 +61,7 @@ console.log(props)
                                 >
                                     Play Video
                             </Button>
-                    </Col>
+                        </Col>
                     </Row>
             </Card>
         </Col>

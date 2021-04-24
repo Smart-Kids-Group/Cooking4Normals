@@ -1,0 +1,16 @@
+.card-img {
+  margin: 15px;
+}
+
+.full-card {
+  background-color: red;
+}
+
+.text-center {
+  margin-top: 10px;
+}
+
+.save-btn {
+  margin: 10px 5%;
+  width: 90%;
+}
