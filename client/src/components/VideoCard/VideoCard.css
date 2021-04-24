@@ -1,9 +1,11 @@
 .card-img {
   margin: 15px;
+  box-shadow: 5px 5px 5px rgb(99, 98, 98);
 }
 
 .full-card {
-  background-color: red;
+  background-color: rgb(230, 230, 230) !important;
+  
 }
 
 .text-center {
