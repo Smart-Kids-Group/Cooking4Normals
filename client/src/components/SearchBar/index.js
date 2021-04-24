@@ -50,7 +50,7 @@ function SearchBar(props) {
               onClick={props.handleRandomSearch}
               id="dare-button"
             >
-              I dare?
+              I dare!
             </Button>
           </Col>
         </Row>
