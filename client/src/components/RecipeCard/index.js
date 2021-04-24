@@ -40,7 +40,7 @@ const RecipeCard = (props) => {
               className="btn-outline-secondary float-right Link-butt"
               rel="noreferrer noopener"
               target="_blank"
-              href={props.href}
+              href={props.data.href}
             >
               Link to Recipe Source
             </a>

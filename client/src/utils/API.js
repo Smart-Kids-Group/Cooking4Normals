@@ -18,6 +18,16 @@ export default {
         "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"},
   })
 },
+
+randomRecipes: function(pageID){
+  return axios({
+  "method": "GET",
+  "url": `https://recipe-puppy.p.rapidapi.com/?p=${pageID}`,  
+  "headers": {
+      "x-rapidapi-key": rapidToken,
+      "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"},
+})
+},
     // gets all recipes from the DB
   getRecipes: function() {
     return axios.get("/api/recipes");
