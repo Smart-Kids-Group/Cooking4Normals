@@ -18,6 +18,16 @@ export default {
         "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"},
   })
 },
+
+randomRecipes: function(pageID){
+  return axios({
+  "method": "GET",
+  "url": `https://recipe-puppy.p.rapidapi.com/?p=${pageID}`,  
+  "headers": {
+      "x-rapidapi-key": rapidToken,
+      "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"},
+})
+},
     // gets all recipes from the DB
   getRecipes: function() {
     return axios.get("/api/recipes");
@@ -65,7 +75,10 @@ export default {
     let userData = {
       fullName: user.fullName,
       screenName: user.screenName,
-      imageURL: user.imageURL
+      imageURL: user.imageURL,
+      email: user.email,
+      password: user.password,
+
     }
     return axios.post("/api/users/" + user.email, { userData });
   },

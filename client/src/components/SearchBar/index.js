@@ -47,7 +47,7 @@ function SearchBar(props) {
             <label class="dare">Do you Dare?</label>
             <Button
               variant="danger"
-              onClick={props.handleRandom}
+              onClick={props.handleRandomSearch}
               id="dare-button"
             >
               I dare?

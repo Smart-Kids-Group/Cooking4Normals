@@ -11,12 +11,12 @@ function SearchResults() {
   const [recipes, setRecipes ] = useState([])
   const [recipeSearch, setRecipeSearch] = useState({
     query: "q=pizza",
-    nameSearch: "pizza",
+    nameSearch: "",
     ingredientSearch: "",
   });
 
   useEffect(() => {
-    loadRecipes();
+    handleRandomSearch();
   }, []);
 
   function loadRecipes() {
@@ -47,6 +47,14 @@ function SearchResults() {
     loadRecipes(recipeSearch.query);
   }
 
+  function handleRandomSearch() {
+    const pageID = Math.floor (Math.random() *100);
+    API.randomRecipes(pageID).then(res => {
+      setRecipes (res.data.results)
+    })
+    .catch((err) => console.log(err));
+  }
+
   function importRecipe(recipeURL) {
     if (recipeURL) {
       API.importRecipeInfo(recipeURL).then((res) => {
@@ -64,6 +72,7 @@ function SearchResults() {
         <SearchBar
           handleInputChange={handleInputChange}
           handleSearchSubmit={handleSearchSubmit}
+          handleRandomSearch={handleRandomSearch}
         />
 
         {recipes

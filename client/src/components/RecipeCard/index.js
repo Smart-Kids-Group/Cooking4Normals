@@ -42,7 +42,7 @@ const RecipeCard = (props) => {
               rel="noreferrer noopener"
               target="_blank"
               href={props.data.href}
-              
+       
             >
               Link to Recipe Source
             </a>
