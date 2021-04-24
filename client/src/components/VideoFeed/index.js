@@ -1,5 +1,6 @@
 import React from "react";
 import YouTube from 'react-youtube';
+import './VideoFeed.css';
 
 class VideoFeed extends React.Component {
   render() {
@@ -12,7 +13,11 @@ class VideoFeed extends React.Component {
       },
     };
 
-    return <YouTube videoId={this.props.videoId} opts={opts} onReady={this._onReady} />;
+    return (
+    <div className="sticky-video">
+    <YouTube videoId={this.props.videoId} opts={opts} onReady={this._onReady} />;
+    </div>
+    )
   }
 
   _onReady(event) {
@@ -20,12 +25,5 @@ class VideoFeed extends React.Component {
     event.target.pauseVideo();
   }
 }
-
-
-
-//   return(
-//     <h1>This is the list of videos</h1>
-//   )
-// }
 
 export default VideoFeed;

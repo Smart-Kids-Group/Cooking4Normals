@@ -9,7 +9,7 @@ function VideoSearch(props) {
   return (
     <form>
         <Row>
-          <Col size="6">
+          <Col size="12">
             <label>
               {" "}
               Search Cooking Videos
@@ -28,9 +28,6 @@ function VideoSearch(props) {
             >
               Search
             </FormBtn>
-          </Col>
-          <Col size="6">
-            
           </Col>
         </Row>
     </form>

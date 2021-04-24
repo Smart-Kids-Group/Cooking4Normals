@@ -2,9 +2,13 @@ form {
   padding-top: 10px;
 }
 
+label {
+  margin-left: 35%;
+}
+
 input {
   padding:5px;
-  width: 250px;
+  width: 400px;
   border: 1px solid rgb(121, 121, 121);
   border-radius: 15px;
 }
