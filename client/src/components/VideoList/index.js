@@ -31,7 +31,7 @@ function VideoList(props){
           : null}
     </Col>
     <Col sm={7}>
-      <VideoFeed {...props} videoId={videoId}/>
+      <VideoFeed {...props} videoid={videoId}/>
     
     </Col>
     </Row>

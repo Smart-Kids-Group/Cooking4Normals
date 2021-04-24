@@ -1,5 +1,24 @@
-.img {
+.card {
 height: auto;
-width: auto;
+width: 1000px;
+align-content: center;
+margin-left: 15%;
+text-align: center;
+}
+
+.Save-butt {
+
+    margin-left: 300px;
+    border: solid;
+    border-radius: 7%;
+
+
+}
+
+.Link-butt {
+    margin-right: 300px;
+    background-color: transparent;
+    border: solid;
+    border-radius: 7%;
 
 }
