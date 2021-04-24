@@ -10,7 +10,7 @@ const VideoCard = (props) => {
 console.log(props)
     return (
         <Col md={12}>
-            <Card className="mb-4 w-60 shadow-sm" >
+            <Card className="mb-4 w-60 shadow-sm full-card" >
                 <Row>   
                 <Col md={4}>
                     {
