@@ -60,7 +60,7 @@ function SearchResults() {
 
   return (
     <>
-      <div className="bg">
+      <div className="bg pg">
         <SearchBar
           handleInputChange={handleInputChange}
           handleSearchSubmit={handleSearchSubmit}

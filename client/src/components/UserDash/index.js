@@ -9,14 +9,13 @@ import {
   CommentField,
   CommentList,
   CommentItem,
-  InfiniteScrollPaginator,
 } from "react-activity-feed";
 import "react-activity-feed/dist/index.es.css";
 import { withRouter } from "react-router-dom";
 import "./UserDash.css";
 
 
-class UserDash extends Component {
+class UserDash extends React.Component{
   containerRef = React.createRef();
 
   render() {
@@ -61,14 +60,6 @@ class UserDash extends Component {
             withOwnChildren: true,
             withRecentReactions: true
           }}
-          Paginator={(props) => (
-            <InfiniteScrollPaginator
-              useWindow={false}
-              threshold={10}
-              {...props}
-              getScrollParent={() => this.containerRef}
-            />
-          )}
           Activity={(activityProps) => (
             <Activity
               {...activityProps}
