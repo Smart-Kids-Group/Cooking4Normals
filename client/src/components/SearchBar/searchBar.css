@@ -13,5 +13,19 @@
 #search-page-button {
   border: 1px solid rgb(121, 121, 121);
   margin-left: 10px;
-  border-radius: 15px;
+  border-radius: 7px;
+  margin-bottom: 9px;
+}
+
+.searchbar{
+  margin-left: 400px;
+}
+
+#dare-button{
+  margin-bottom: 6px;
+  border-radius: 7px;
+}
+
+.dare{
+  margin-top: 30px;
 }
