@@ -8,7 +8,6 @@ import './VideoSearch.css';
 function VideoSearch(props) {
   return (
     <form>
-      <Container>
         <Row>
           <Col size="6">
             <label>
@@ -34,7 +33,6 @@ function VideoSearch(props) {
             
           </Col>
         </Row>
-      </Container>
     </form>
   );
 }
