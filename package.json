@@ -27,7 +27,6 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.12.3",
     "morgan": "^1.10.0",
-    "n": "^7.2.1",
     "node-sass": "^4.0.0",
     "react-activity-feed": "^0.10.2",
     "react-avatar-editor": "^11.1.0",
