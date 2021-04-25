@@ -34,8 +34,8 @@ function CookBook() {
           <hr/>
           <RecipeImport />
         </Col>
-        <Col sm={9}>
-          <Container className=" CB">
+        <Col sm={8}>
+          <Container className="CB">
             <h1 className="text-center">Personal Cookbook</h1>
             <br></br>
 

@@ -21,8 +21,8 @@ const RecipeCard = (props) => {
   };
 
   return (
-    <Col md={12}>
-      <Card style={mystyle} className="mb-4 w-60 shadow-sm card" page={props.page}>
+    <Col md={8}>
+      <Card style={mystyle} className="mb-4 w-60 shadow-sm cardplace" page={props.page}>
         <Row>
           <Col md={12}>
             <Card.Title className="text-center">{props.data.title}</Card.Title>

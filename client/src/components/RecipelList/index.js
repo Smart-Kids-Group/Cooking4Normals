@@ -20,7 +20,7 @@ function RecipeList(props){
   return(
     <Container>
       <Row>
-      <Col sm={3}>
+      <Col sm={2}>
     <ListGroup>
      {props.data
           ? props.data.map((recipe, i) => (
@@ -30,12 +30,15 @@ function RecipeList(props){
               data-name={recipe.name} 
               onClick={(event) => handleClick(event)}
               > {recipe.name}
+              <hr />
               </ListGroup.Item>
+            
             ))
           : null}
+         
     </ListGroup>
     </Col>
-    <Col sm={9}>
+    <Col sm={10} className="dots">
       <FullRecipe {...props} indexNum={recipeKey}/>
     
     </Col>

@@ -1,3 +1,7 @@
-p {
-    margin-left: 0%;
+.dots{
+    background-color: white;
+}
+
+.sidelist{
+    overflow-x: scroll;
 }

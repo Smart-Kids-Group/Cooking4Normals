@@ -15,5 +15,22 @@
 .CB {
     background-color: rgba(255, 255, 255, 0.534);
     text-align: center;
-    padding-top: 2px;
+    padding-top: 1px;
+    
+
+}
+
+.create{
+    padding: 3%;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(100deg, rgb(161, 161, 161) 0%, rgb(0, 0, 0) 100%);
+    margin: 5%;
+    margin-left: 20%;
+    margin-top: 10%;
+}
+
+.enter-recipe{
+    background: linear-gradient(100deg, rgb(161, 161, 161) 0%, rgb(0, 0, 0) 100%);
+    color: white;
 }
