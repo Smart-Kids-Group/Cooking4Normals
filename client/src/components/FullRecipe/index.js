@@ -7,7 +7,6 @@ import "./style.css"
 
 const FullRecipe = (props) => {
  let i = props.indexNum
- console.log(props.data[i])
  const recipe = props.data[i];
   return (
   
