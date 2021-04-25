@@ -53,7 +53,7 @@ const VideoCard = (props) => {
                     <Row>
                     <Col md={12}>
                     <Button 
-                                className="save-btn" 
+                                className="save-btn sav-butt" 
                                 size="sm" 
                                 data-videoid={props.data.id.videoId}
                                 variant="outline-secondary" 

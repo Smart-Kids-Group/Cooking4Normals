@@ -15,7 +15,7 @@ class VideoFeed extends React.Component {
 
     return (
     <div className="sticky-video">
-    <YouTube videoId={this.props.videoId} opts={opts} onReady={this._onReady} />;
+    <YouTube videoId={this.props.videoid} opts={opts} onReady={this._onReady} />;
     </div>
     )
   }
