@@ -20,7 +20,8 @@ function Auth() {
           email: user.email,
           userId: user.uid
         });
-        API.updateUser(userProfile).then (res => history.push("/dashboard"))
+        history.push("/dashboard");
+        API.updateUser(userProfile).then (res => console.log("User Updated"))
 
     }});
   }, [history]);
