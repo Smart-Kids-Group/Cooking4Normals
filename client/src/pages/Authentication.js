@@ -20,7 +20,7 @@ function Auth() {
           userId: user.uid
         });
         history.push("/dashboard");
-        console.log(userProfile)
+  
 
     }});
   }, [history]);

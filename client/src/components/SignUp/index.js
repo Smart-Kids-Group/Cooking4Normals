@@ -19,8 +19,7 @@ function SignUp() {
         password: password,
         userId: res.user.uid
       }))
-      
-      API.createUser(userProfile)
+      setTimeout (API.createUser, 750, userProfile)
       .then( res => API.createChatUser(email,password))
       history.push("/profile");
     }).catch(err => {
