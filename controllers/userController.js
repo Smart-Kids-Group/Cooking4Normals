@@ -23,7 +23,7 @@ module.exports = {
   },
   update: function(req, res) {
     db.User
-      .updateOne({ email: req.params.id }, req.body, {upsert: true})
+      .updateOne({ email: req.params.id }, req.body.userData, {upsert: true})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
