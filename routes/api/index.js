@@ -5,6 +5,6 @@ const userRoutes = require("./user")
 
 
 router.use("/recipes", recipeRoutes);
-router.use("/user", userRoutes);
+router.use("/users", userRoutes);
 
 module.exports = router;

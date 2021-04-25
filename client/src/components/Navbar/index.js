@@ -8,7 +8,7 @@ import { auth } from "../../utils/firebase";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  const {user} = useContext(UserContext);
+  const {userProfile} = useContext(UserContext);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
@@ -102,7 +102,7 @@ function Navbar() {
                 Profile
               </Link>
             </li>
-          {(!user)?
+          {(!userProfile)?
           
           <li className="nav-item">
               <Link
