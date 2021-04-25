@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
-import { auth } from "../../utils/firebase.js"
+import { auth } from "../../utils/firebase";
 import { useHistory } from "react-router-dom";
-import "./signin.scss"
+import "./signin.scss";
 import UserContext from "../../utils/UserContext.js";
+import Alert from "react-bootstrap/Alert";
 
 
 function SignIn() {
@@ -19,7 +20,7 @@ function SignIn() {
       setUser( {email:email, password: password} );
       history.push("/dashboard");
     }).catch (err => {
-      console.log("Incorrect email or password.")
+      return <Alert variant ="danger">Incorrect email or password. </Alert>
     })
   }
 

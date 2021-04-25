@@ -29,7 +29,10 @@ const [recipeData, setRecipeData] = useState({})
    screenName: "",
    fullName: "",
    imageURL: "",
-   userId: ""
+   userId: "",
+   profileDescription: "",
+   friends:[],
+   favoriteCuisines: ""
  }) 
   
   useEffect(() => {

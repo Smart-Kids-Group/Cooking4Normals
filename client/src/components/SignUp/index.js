@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import "./signup.scss"
 import API from "../../utils/API.js";
 import UserContext from "../../utils/UserContext"
+import Alert from "react-bootstrap/Alert";
 
 function SignUp() {
   const history = useHistory();
@@ -16,14 +17,17 @@ function SignUp() {
     auth.createUserWithEmailAndPassword(email,password).then(res => {
       setUserProfile( {
         email: email,
-        password: password,
         userId: res.user.uid
-      })
+      });
       API.createChatUser(email,password);
-      history.push("/profile")})
-   .catch(err => {
-      console.log("Please try again with different credentials.")
+      history.push("/profile");
+      
     })
+   .catch(err => {
+    return <Alert variant ="danger">Please try again with different credentials. </Alert>
+  
+    })
+    
   }
 
   return (
