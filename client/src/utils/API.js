@@ -71,16 +71,35 @@ randomRecipes: function(pageID){
     })
   },
 
-  saveUser: function(user) {
+  createUser: function(user) {
     let userData = {
       fullName: user.fullName,
       screenName: user.screenName,
       imageURL: user.imageURL,
       email: user.email,
       password: user.password,
-
+      profileDescription: user.profileDescription,
+      friends: user.friends,
+      userId: user.uid,
+      favoriteCuisines: user.favoriteCuisines
     }
-    return axios.post("/api/users/" + user.email, { userData });
+    return axios.post("/api/users/", { userData });
+  },
+  
+  
+  updateUser: function(user) {
+    let userData = {
+      fullName: user.fullName,
+      screenName: user.screenName,
+      imageURL: user.imageURL,
+      email: user.email,
+      password: user.password,
+      profileDescription: user.profileDescription,
+      friends: user.friends,
+      userId: user.uid,
+      favoriteCuisines: user.favoriteCuisines
+    }
+    return axios.post("/api/users/" + user.id, { userData });
   },
   
   // Saves a recipe to the database

@@ -23,12 +23,13 @@ const App = (props) => {
   const [recipes, setRecipes] = useState([]);
 const [recipeData, setRecipeData] = useState({})
   
- const [user, setUser] = useState({
+ const [userProfile, setUserProfile] = useState({
    email: "",
    password:"",
    screenName: "",
    fullName: "",
-   imageURL: ""
+   imageURL: "",
+   userId: ""
  }) 
   
   useEffect(() => {
@@ -39,7 +40,7 @@ const [recipeData, setRecipeData] = useState({})
 
 
   return (
-    <UserContext.Provider value = {{user, setUser}} >
+    <UserContext.Provider value = {{userProfile, setUserProfile}} >
       <RecipeContext.Provider value = {{recipes, setRecipes, recipeData, setRecipeData}}>
     <Router>
       <div>

@@ -1,19 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SignIn from "../components/Signin";
 import SignUp from "../components/SignUp";
 import { auth } from "../utils/firebase";
 import { useHistory } from "react-router-dom";
 import "./auth.scss";
 import Footer from "../components/Footer/index";
+import UserContext from "../utils/UserContext";
 
 function Auth() {
   const history = useHistory();
   const [authType, setAuthType] = useState("signIn");
+  const { userProfile, setUserProfile } = useContext(UserContext)
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      if (user) history.push("/dashboard");
-    });
+      if (user) {
+        setUserProfile ({ ...userProfile,
+          email: user.email,
+          userId: user.uid
+        });
+        history.push("/dashboard");
+        console.log(userProfile)
+
+    }});
   }, [history]);
 
   return (

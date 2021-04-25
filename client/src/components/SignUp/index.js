@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { auth } from "../../utils/firebase.js"
 import { useHistory } from "react-router-dom";
 import "./signup.scss"
 import API from "../../utils/API.js";
+import UserContext from "../../utils/UserContext"
 
 function SignUp() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { userProfile, setUserProfile} = useContext(UserContext);
 
   const signup = () => {
   
     auth.createUserWithEmailAndPassword(email,password).then(res => {
-      API.createChatUser(email,password);
-      API.saveUser(email);
+      setUserProfile(( {
+        email: email,
+        password: password,
+        userId: res.user.uid
+      }))
+      
+      API.createUser(userProfile)
+      .then( res => API.createChatUser(email,password))
       history.push("/profile");
     }).catch(err => {
       console.log("Please try again with different credentials.")
