@@ -10,7 +10,7 @@ function VideoSearch(props) {
     <form>
         <Row>
           <Col size="12">
-            <label>
+            <label className="maker">
               {" "}
               Search Cooking Videos
               <Input

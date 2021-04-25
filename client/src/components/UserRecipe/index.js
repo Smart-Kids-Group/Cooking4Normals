@@ -7,6 +7,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import API from "../../utils/API";
+import "./style.css";
 
 function UserRecipe(props) {
   const [show, setShow] = useState(false);
@@ -43,12 +44,12 @@ function UserRecipe(props) {
 
   return (
 <>
-    <Button variant="secondary" onClick={handleShow}>
+    <Button variant="secondary" onClick={handleShow} className="create">
    Create your own Recipe
   </Button>
 
     <Modal {...props} show={show} size="lg" onHide={handleClose} aria-labelledby="contained-modal-title-vcenter">
-    <Modal.Header closeButton>
+    <Modal.Header closeButton className="enter-recipe">
       <Modal.Title id="contained-modal-title-vcenter">
        Enter your Recipe Information
       </Modal.Title>

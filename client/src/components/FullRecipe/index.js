@@ -2,6 +2,7 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
+import "./style.css"
 
 
 const FullRecipe = (props) => {
@@ -16,24 +17,9 @@ const FullRecipe = (props) => {
       <Card className="mb-4 w-60 shadow-sm">
         <Row>
           <Col md={12} className="Impo">
-            <Card.Title className="text-center">{recipe.name}</Card.Title>
-            <br />
-            {recipe.description ? (
-              <Card.Text className="float-left">
-                {" "}
-                {recipe.description}
-              </Card.Text>
-            ) : null}
-            <ul>
-              {recipe.ingredients
-                ? recipe.ingredients.map((ingredient, i) => (
-                    <li key={i}>{ingredient}</li>
-                  ))
-                : null}
-            </ul>
-            {recipe.href ? (
+          {recipe.href ? (
               <a
-                className="btn-primary float-right"
+                className="btn-primary float-right Linkbuut"
                 rel="noreferrer noopener"
                 target="_blank"
                 href={recipe.href}
@@ -41,6 +27,23 @@ const FullRecipe = (props) => {
                 Link to Recipe Source
               </a>
             ) : null}
+            <Card.Title className="text-center">{recipe.name}</Card.Title>
+            <hr />
+            {recipe.description ? (
+              <Card.Text className="float-left">
+                {" "}
+                {recipe.description}
+                <hr />
+              </Card.Text>
+            ) : null}            
+            <ul>
+              {recipe.ingredients
+                ? recipe.ingredients.map((ingredient, i) => (
+                    <li key={i}>{ingredient}</li>
+                  ))
+                : null}
+            </ul>
+            <hr />
             <ol>
               {recipe.instructions[0].steps
                 ? recipe.instructions[0].steps.map((instruction,i) => (

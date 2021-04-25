@@ -2,11 +2,11 @@ form {
   padding-top: 10px;
 }
 
-label {
+.maker {
   margin-left: 35%;
 }
 
-input {
+.videoSearch {
   padding:5px;
   width: 400px;
   border: 1px solid rgb(121, 121, 121);
