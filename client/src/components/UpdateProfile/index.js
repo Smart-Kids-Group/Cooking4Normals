@@ -11,25 +11,22 @@ import UserContext from "../../utils/UserContext";
 
 function EditProfile(props) {
   const [show, setShow] = useState(false);
-  const { user, setUser } = useContext(UserContext);
+  const { userProfile, setUserProfile } = useContext(UserContext);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   
   const handleSave = () => {
-    API.saveUser(user);
+    API.updateUser(userProfile);
     setShow(false)
     }
 
-  function handleNameChange(event) {
+  function handleInputChange(event) {
     const { value, name } = event.target;
-    setUser({ ...user, [name]: value });
+    setUserProfile({ ...userProfile, [name]: value });
   } 
 
-  function handleScreenNameChange(event) {
-    const { value, name } = event.target;
-    setUser({ ...user, [name]: value });
-  }
+
 
 
 
@@ -39,7 +36,7 @@ function EditProfile(props) {
    Update your Profile Information
   </Button>
 
-    <Modal {...props} show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter">
+    <Modal {...props} show={show} size="lg" onHide={handleClose} aria-labelledby="contained-modal-title-vcenter">
     <Modal.Header closeButton>
       <Modal.Title id="contained-modal-title-vcenter">
        Update Your Profile
@@ -56,7 +53,7 @@ function EditProfile(props) {
              <FormControl
                placeholder="Enter First and Last Name"
                name="fullName"
-               onChange={handleNameChange}
+               onChange={e => handleInputChange(e)}
                 aria-label="name"
                 aria-describedby="basic-addon1"
                />
@@ -72,8 +69,42 @@ function EditProfile(props) {
              <FormControl
                placeholder="Choose a screen name."
                name="screenName"
-               onChange={handleScreenNameChange}
+               onChange={e => handleInputChange(e)}
                 aria-label="name"
+                aria-describedby="basic-addon1"
+               />
+             </InputGroup>
+        </Col>
+        </Row>
+        <Row>
+        <Col>
+        <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+                <InputGroup.Text id="basic-addon1">About Me</InputGroup.Text>
+            </InputGroup.Prepend>
+             <FormControl
+               placeholder="Tell us something about yourself."
+               as="textarea"
+               name="profileDescription"
+               onChange={e => handleInputChange(e)}
+                aria-label="profileDescription"
+                aria-describedby="basic-addon1"
+               />
+             </InputGroup>
+        </Col>
+        </Row>
+        <Row>
+        <Col>
+        <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+                <InputGroup.Text id="basic-addon1">Favorite Cuisines</InputGroup.Text>
+            </InputGroup.Prepend>
+             <FormControl
+               placeholder="What are your favorite kinds of food?"
+               as="textarea"
+               name="favoriteCuisines"
+               onChange={e => handleInputChange(e)}
+                aria-label="favoriteCuisines"
                 aria-describedby="basic-addon1"
                />
              </InputGroup>

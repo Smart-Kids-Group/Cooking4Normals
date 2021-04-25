@@ -6,8 +6,8 @@ let userSchema = new Schema({
   email: {
     type: String,
     unique: true,
-    match: [/^[^\s@]+@[^\s@]+$/, "Please enter a valid e-mail address"],
-    required: "Email is required"
+    // match: [/^[^\s@]+@[^\s@]+$/, "Please enter a valid e-mail address"],
+    // required: "Email is required"
   },
 
   screenName: {
@@ -21,16 +21,14 @@ let userSchema = new Schema({
   },
 
   userId: {
-    type: String,
-    unique: true
+    type: String
 
   },
   
   password: {
     type: String,
     trim: true,
-    required: "Password is Required",
-    validate: [({ length }) => length >= 6, "Password should be longer."]
+  
   },
   imageURL: {
     type: String,

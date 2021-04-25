@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 // import Card from "react-bootstrap/Card";
 // import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button"
+import UserContext from "../../utils/UserContext"
 import './ProfileIntro.css';
-// import MyEditor from '../AvatarEditor'
 
 
 function ProfileIntro(){
+
+    const { userProfile, setUserProfile } = useContext(UserContext)
 
     const updateProfilePic = () => {
          return "Profile pic stuff"
@@ -19,11 +21,19 @@ function ProfileIntro(){
         <Row>
         <Col mid={2}>
            <Row>
-               <Col><div>
+               <Col>
+               {userProfile.fullName
+               ? <div>
+                <h1 className ="picHeader">{userProfile.fullName}'s Profile</h1>
+                {userProfile.image
+                ?<img className="proPic" alt="userImage" src={userProfile.image}></img>
+                :<img className="proPic" src="https://via.placeholder.com/360"
+                alt="placeholder" ></img>}
+               </div>: <div>
                 <h1 className ="picHeader">My Profile</h1>
-                <img className="proPic" alt="userImage" src="http://via.placeholder.com/360x360"></img>
-                
-            </div>
+                <img className="proPic" src="https://via.placeholder.com/360"
+                        alt="placeholder" ></img>
+               </div>  }
             </Col> 
             </Row>
             <Button className="small" variant="secondary" onClick={updateProfilePic}>Edit Picture</Button>
@@ -32,13 +42,18 @@ function ProfileIntro(){
         <Col mid={10} >
             <div className = "BioDiv">
                 <h3 className="bioHeader">
-                    User Bio
+                    About Me
                 </h3>
+                {userProfile.profileDescription
+                ? <div>
                 <p className ="userInfo">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta imperdiet magna eget rhoncus. Quisque ligula risus, fringilla sed nisl vel, sagittis elementum lectus. Etiam quis consequat mauris, eget tristique nisl. Nulla imperdiet augue ex, ut venenatis turpis mattis a. Nulla eu elit tincidunt odio consequat pharetra in nec urna. Mauris aliquam consectetur ante, non mollis erat fermentum et. Sed nec pulvinar dolor. Nullam viverra orci mattis, varius tellus in, fermentum massa. Integer eget urna at nibh placerat ornare. Etiam dapibus dignissim elit ac vehicula.
-
-Donec commodo sapien at fringilla fringilla. In rhoncus, lectus nec placerat auctor, augue est ullamcorper ex, quis semper nisi mauris vitae velit. Phasellus fermentum viverra tincidunt. Curabitur iaculis ipsum ut justo semper, et consectetur neque suscipit. Suspendisse faucibus orci viverra, tincidunt ligula quis, scelerisque neque. Quisque nibh mauris, porta sed lacinia eu, varius vel augue. Sed id nunc sed lorem mattis eleifend vel eget lorem. Vestibulum ultrices neque id fringilla faucibus. Pellentesque ut leo aliquet, rutrum arcu et, euismod nisl. Phasellus ac ex vel lorem laoreet suscipit. Donec ut laoreet neque. Sed eu velit consectetur, lobortis nisl ut, condimentum ligula.
+                {userProfile.profileDescription}
                 </p>
+                </div> : 
+                    <p className ="userInfo">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>}
+                
             </div>
         </Col>
         </Row>
@@ -46,9 +61,18 @@ Donec commodo sapien at fringilla fringilla. In rhoncus, lectus nec placerat auc
             <Col mid = {4}></Col>
             <Col mid={4} className="end">
                 <h3>Favorite cuisines</h3>
-                <p>Himilayan, Ethiopian, Mexican</p>
+                <p>{userProfile.favoriteCuisines}</p>
+                {userProfile.friends[0]
+                ?
                 <h3>Friend's list</h3>
-                <p>placeholder</p>
+                :null}
+               <ul>
+               {userProfile.friends
+                ? userProfile.friends.map((friend, i) => (
+                    <li>{friend}</li>
+                ))
+                : null} 
+                </ul>
             </Col>
             <Col mid={4}></Col>
         </Row>
