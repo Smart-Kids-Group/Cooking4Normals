@@ -99,7 +99,7 @@ randomRecipes: function(pageID){
       userId: user.uid,
       favoriteCuisines: user.favoriteCuisines
     }
-    return axios.put("/api/users/" + user.email, { userData });
+    return axios.post("/api/users/" + user.email, { userData });
   },
   
   // Saves a recipe to the database

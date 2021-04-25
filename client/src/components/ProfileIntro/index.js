@@ -21,11 +21,19 @@ function ProfileIntro(){
         <Row>
         <Col mid={2}>
            <Row>
-               <Col><div>
+               <Col>
+               {userProfile.fullName
+               ? <div>
                 <h1 className ="picHeader">{userProfile.fullName}'s Profile</h1>
-                <img className="proPic" alt="userImage" src="http://via.placeholder.com/360x360"></img>
-                
-            </div>
+                {userProfile.image
+                ?<img className="proPic" alt="userImage" src={userProfile.image}></img>
+                :<img className="proPic" src="https://via.placeholder.com/360"
+                alt="placeholder" ></img>}
+               </div>: <div>
+                <h1 className ="picHeader">My Profile</h1>
+                <img className="proPic" src="https://via.placeholder.com/360"
+                        alt="placeholder" ></img>
+               </div>  }
             </Col> 
             </Row>
             <Button className="small" variant="secondary" onClick={updateProfilePic}>Edit Picture</Button>
@@ -36,9 +44,16 @@ function ProfileIntro(){
                 <h3 className="bioHeader">
                     About Me
                 </h3>
+                {userProfile.profileDescription
+                ? <div>
                 <p className ="userInfo">
                 {userProfile.profileDescription}
                 </p>
+                </div> : 
+                    <p className ="userInfo">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>}
+                
             </div>
         </Col>
         </Row>
@@ -47,7 +62,10 @@ function ProfileIntro(){
             <Col mid={4} className="end">
                 <h3>Favorite cuisines</h3>
                 <p>{userProfile.favoriteCuisines}</p>
+                {userProfile.friends[0]
+                ?
                 <h3>Friend's list</h3>
+                :null}
                <ul>
                {userProfile.friends
                 ? userProfile.friends.map((friend, i) => (
