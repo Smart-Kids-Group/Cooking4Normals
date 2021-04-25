@@ -9,24 +9,21 @@ function SignUp() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { userProfile, setUserProfile} = useContext(UserContext);
+  const { setUserProfile} = useContext(UserContext);
 
   const signup = () => {
   
     auth.createUserWithEmailAndPassword(email,password).then(res => {
-      setUserProfile(( {
+      setUserProfile( {
         email: email,
         password: password,
         userId: res.user.uid
-      }))
-      
-      API.createUser(userProfile)
-      .then( res => API.createChatUser(email,password))
-      history.push("/profile");
-    }).catch(err => {
+      })
+      API.createChatUser(email,password);
+      history.push("/profile")})
+   .catch(err => {
       console.log("Please try again with different credentials.")
     })
-
   }
 
   return (
