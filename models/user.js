@@ -19,6 +19,12 @@ let userSchema = new Schema({
     type: String,
     trim:true
   },
+
+  userId: {
+    type: String,
+    unique: true
+
+  },
   
   password: {
     type: String,
@@ -29,6 +35,20 @@ let userSchema = new Schema({
   imageURL: {
     type: String,
     trim: true
+  },
+  
+  profileDescription: {
+    type: String,
+    trim: true
+  },
+
+  friends: {
+    type: Array,
+  },
+
+  favoriteCuisines: {
+    type: String,
+    trim:  true
   }
 
 });
