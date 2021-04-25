@@ -21,8 +21,7 @@ let userSchema = new Schema({
   },
 
   userId: {
-    type: String,
-    unique: true
+    type: String
 
   },
   
