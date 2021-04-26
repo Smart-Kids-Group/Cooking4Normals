@@ -70,7 +70,9 @@ function UserRecipe(props) {
              <FormControl
                placeholder="Name"
                name="recipeName"
+
                onChange={(event) => handleNameChange(event)}
+
                 aria-label="name"
                 aria-describedby="basic-addon1"
                />
@@ -87,6 +89,7 @@ function UserRecipe(props) {
                placeholder="Please enter the ingredients"
                as="textarea"
                name="ingredients"
+
                onChange={(event) => handleIngredientsChange(event)}
                 aria-label="name"
                 aria-describedby="basic-addon1"
@@ -104,7 +107,9 @@ function UserRecipe(props) {
                placeholder="Please enter the instructions for your recipe."
                as="textarea"
                name="instructions"
+
                onChange={(event) => handleInstructionsChange(event)}
+
                 aria-label="name"
                 aria-describedby="basic-addon1"
                />
