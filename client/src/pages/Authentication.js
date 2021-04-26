@@ -17,7 +17,7 @@ function Auth() {
       if (user) {
         setUserProfile ({ ...userProfile,
           email: user.email,
-          password:user.password,
+          password: user.password,
           userId: user.uid
         });
         history.push("/dashboard");
