@@ -8,6 +8,13 @@ import "./style.css"
 const FullRecipe = (props) => {
  let i = props.indexNum
  const recipe = props.data[i];
+ const divStyle = {
+  overflowY: "scroll",
+  float: "left",
+  height: "500px",
+  position: "relative",
+};
+
   return (
   
     
@@ -15,7 +22,7 @@ const FullRecipe = (props) => {
     {props.data[i]?
       <Card className="mb-4 w-60 shadow-sm">
         <Row>
-          <Col md={12} className="Impo">
+          <Col md={12} className="Impo" style={divStyle}>
           {recipe.href ? (
               <a
                 className="btn-primary float-right Linkbuut"
