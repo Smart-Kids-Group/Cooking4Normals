@@ -18,9 +18,9 @@ import RecipeContext from "./utils/RecipeContext";
 
 
 
-const App = (props) => {
+const App = () => {
 
-  const history = useHistory();
+  let history = useHistory();
   const [recipes, setRecipes] = useState([]);
 const [recipeData, setRecipeData] = useState({})
   
@@ -38,16 +38,15 @@ const [recipeData, setRecipeData] = useState({})
   
   useEffect(() => {
     auth.onAuthStateChanged(user => {
-       if (!user) {history.push('/')}
        if (user) {
         setUserProfile ({ ...userProfile,
           email: user.email,
           password:user.password,
           userId: user.uid
         });
-       }
+       }  else history.push("/")
     })
- }, [userProfile])
+ }, [userProfile.email])
 
 
   return (
