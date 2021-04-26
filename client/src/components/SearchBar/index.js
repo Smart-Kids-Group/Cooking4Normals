@@ -44,7 +44,7 @@ function SearchBar(props) {
             </FormBtn>
           </Col>
           <Col size="2">
-            <label class="dare">Do you Dare?</label>
+            <label className="dare">Do you Dare?</label>
             <Button
               variant="danger"
               onClick={props.handleRandomSearch}
