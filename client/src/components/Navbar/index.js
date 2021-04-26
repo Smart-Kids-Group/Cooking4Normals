@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import UserContext from "../../utils/UserContext";
@@ -9,15 +10,14 @@ function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const {userProfile} = useContext(UserContext);
+  const history = useHistory();
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   const logOut = () => {
-    auth
-      .signOut()
+    auth.signOut()
       .then((res) => {
-        props.history.push("/sign-up");
-        //do something else with res
+        history.push("/sign-up");
       })
       .catch((err) => {
         //do something else with err
