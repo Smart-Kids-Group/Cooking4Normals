@@ -4,6 +4,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import FullRecipe from "../FullRecipe";
+import UserRecipe from "../UserRecipe";
+import RecipeImport from "../RecipeImport";
 import "./style.css";
 
 function RecipeList(props) {
@@ -21,9 +23,12 @@ function RecipeList(props) {
   }
 
   return (
-    <Container>
       <Row>
-        <Col sm={2}>
+        <Col sm={3}>
+          <UserRecipe />
+          <hr />
+          <RecipeImport />
+          <hr />
           <ListGroup style={divStyle}>
             {props.data
               ? props.data.map((recipe, i) => (
@@ -42,11 +47,11 @@ function RecipeList(props) {
               : null}
           </ListGroup>
         </Col>
-        <Col sm={10} className="dots">
+        <Col sm={8} className="dots">
           <FullRecipe {...props} indexNum={recipeKey} style={divStyle}/>
         </Col>
       </Row>
-    </Container>
+    
   );
 }
 export default RecipeList;
