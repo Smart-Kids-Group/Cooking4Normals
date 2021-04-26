@@ -19,16 +19,18 @@ function ProfileIntro(){
     }, [])
     
     const loadProfile = (email) => {
-        API.getUser(email).then( data =>
+        API.getUser(email).then( data => {
+            console.log(data)
+       
             setUserProfile({
-                email: data.email,
-                favoriteCuisine: data.favoriteCuisine,
-                imageURL: data.imageURL,
-                profileDescription: data.profileDescription,
-                screenName: data.screenName,
-                fullName: data.fullName
+                email: data.data[0].email,
+                favoriteCuisine: data.data[0].favoriteCuisine,
+                imageURL: data.data[0].imageURL,
+                profileDescription: data.data[0].profileDescription,
+                screenName: data.data[0].screenName,
+                fullName: data.data[0].fullName
             })
-
+        }
         )
     }
 
