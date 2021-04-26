@@ -9,13 +9,13 @@ import Footer from "../components/Footer";
 import Auth from "./Authentication"
 
 function Chat() {
-  const { user } = useContext(UserContext);
+  const { userProfile } = useContext(UserContext);
 
   if (!localStorage.getItem("username")) {
     const authObject = {
       "Project-ID": "bbe806e8-81f3-4f62-92b4-957850212ca6",
-      "User-Name": user.email,
-      "User-Secret": user.password,
+      "User-Name": userProfile.email,
+      "User-Secret": userProfile.password,
     };
 
     try {
