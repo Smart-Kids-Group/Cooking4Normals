@@ -18,3 +18,18 @@ form {
   margin-left: 10px;
   border-radius: 15px;
 }
+
+@media screen and (max-width: 960px) {
+  .maker {
+    margin-left: 5px;
+    text-align: center;
+    height: 60px;
+  }
+  .videoSearch {
+    width: 98vw;
+  }
+  #video-search-button {
+    width: 96vw;
+    margin-bottom: 10px;
+  }
+}

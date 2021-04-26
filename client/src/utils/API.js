@@ -101,18 +101,14 @@ randomRecipes: function(pageID){
     }
     return axios.post("/api/users/" + user.email, { userData });
   },
+
+  getUser: function(id) {
+    return axios.get("/api/users/" + id);
+  },
   
   // Saves a recipe to the database
   saveRecipe: function(recipe) {
-    let recipeData = {
-      name: recipe.name,
-      description: recipe.description,
-      ingredients: recipe["original-ingredients"],
-      instructions: recipe["original-instructions"],
-      href: recipe.url,
-      image: recipe.images[0]
-    };
-    return axios.post("/api/recipes", recipeData);
+    return axios.post("/api/recipes", recipe);
   },
  
 };
