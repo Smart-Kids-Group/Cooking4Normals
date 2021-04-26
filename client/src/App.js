@@ -37,7 +37,14 @@ const [recipeData, setRecipeData] = useState({})
   
   useEffect(() => {
     auth.onAuthStateChanged(user => {
-       if (!user) props.history.push('/')
+       if (!user) { props.history.push('/')}
+       if (user) {
+        setUserProfile ({ ...userProfile,
+          email: user.email,
+          password:user.password,
+          userId: user.uid
+        });
+       }
     })
  }, [])
 
