@@ -49,11 +49,11 @@ function UserRecipe(props) {
 
   return (
 <>
-    <Button variant="secondary" onClick={handleShow} className="create">
+    <Button variant="secondary" onClick={() => handleShow()} className="create">
    Create your own Recipe
   </Button>
 
-    <Modal {...props} show={show} size="lg" onHide={handleClose} aria-labelledby="contained-modal-title-vcenter">
+    <Modal {...props} show={show} size="lg" onHide={() => handleClose()} aria-labelledby="contained-modal-title-vcenter">
     <Modal.Header closeButton className="enter-recipe">
       <Modal.Title id="contained-modal-title-vcenter">
        Enter your Recipe Information
@@ -70,7 +70,7 @@ function UserRecipe(props) {
              <FormControl
                placeholder="Name"
                name="recipeName"
-               onChange={handleNameChange}
+               onChange={() => handleNameChange()}
                 aria-label="name"
                 aria-describedby="basic-addon1"
                />
@@ -87,7 +87,7 @@ function UserRecipe(props) {
                placeholder="Please enter the ingredients"
                as="textarea"
                name="ingredients"
-               onChange={handleIngredientsChange}
+               onChange={() => handleIngredientsChange()}
                 aria-label="name"
                 aria-describedby="basic-addon1"
                />
@@ -104,7 +104,7 @@ function UserRecipe(props) {
                placeholder="Please enter the instructions for your recipe."
                as="textarea"
                name="instructions"
-               onChange={handleInstructionsChange}
+               onChange={() => handleInstructionsChange()}
                 aria-label="name"
                 aria-describedby="basic-addon1"
                />
@@ -114,10 +114,10 @@ function UserRecipe(props) {
       </Container>
     </Modal.Body>
     <Modal.Footer>
-    <Button variant="secondary" onClick={handleClose}>
+    <Button variant="secondary" onClick={()=>handleClose()}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleSave}>
+          <Button variant="primary" onClick={() => handleSave()}>
             Save Changes
           </Button>
     </Modal.Footer>

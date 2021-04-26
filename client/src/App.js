@@ -47,7 +47,7 @@ const [recipeData, setRecipeData] = useState({})
         });
        }
     })
- }, [])
+ }, [userProfile])
 
 
   return (
