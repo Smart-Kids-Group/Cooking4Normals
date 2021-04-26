@@ -22,3 +22,26 @@
   font-family: "Arial";
   font-size: "17px";
 }
+
+@media screen and (max-width: 960px) {
+  .cardplace {
+    margin-left: 0px;
+    width: 95vw;
+  }
+  .Link-butt {
+    width: 90vw;
+    margin: 0px auto;
+    float: left;
+    margin-bottom: 10px;
+    height: 37px;
+    padding: 6px;
+  }
+  .Save-butt {
+    clear: both;
+    margin-left: 0;
+    width: 89vw;
+  }
+  .float-right {
+    float: none;
+  }
+}

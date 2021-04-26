@@ -29,3 +29,9 @@
 .dare{
   margin-top: 30px;
 }
+
+@media screen and (max-width: 960px) {
+  .name-search {
+    height: 60px;
+  }
+}
