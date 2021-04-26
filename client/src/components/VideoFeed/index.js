@@ -5,8 +5,8 @@ import './VideoFeed.css';
 class VideoFeed extends React.Component {
   render() {
     const opts = {
-      height: '450',
-      width: '800',
+      // height: '450',
+      // width: '800',
       playerVars: {
         https:"developers.google.com/youtube/player_parameters",
         autoplay: 1,

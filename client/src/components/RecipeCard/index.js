@@ -44,7 +44,7 @@ const RecipeCard = (props) => {
               href={props.data.href}
        
             >
-              Link to Recipe Source
+              Link to Recipe
             </a>
             <Button
               className="save-btn Save-butt"
@@ -53,7 +53,7 @@ const RecipeCard = (props) => {
               onClick={() => props.handleRecipeSubmit(props.data.href)}
               style={savestyle}
             >
-              Save
+              Save Recipe
             </Button>
           </Col>
         </Row>

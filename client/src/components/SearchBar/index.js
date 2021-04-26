@@ -15,7 +15,7 @@ function SearchBar(props) {
             <label
             className="name-search">
               {" "}
-              Search By Keyword (Chinese, pizza, etc)
+              Search By Keyword
               <Input
                 name="nameSearch"
                 onChange={props.handleInputChange}
@@ -44,7 +44,8 @@ function SearchBar(props) {
               Search
             </FormBtn>
           </Col>
-          <Col size="2">
+          <Col size="2"
+          className="dare-col">
             <label className="dare">Do you Dare?</label>
             <Button
               variant="danger"

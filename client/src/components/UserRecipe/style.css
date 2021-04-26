@@ -24,10 +24,7 @@
     padding: 3%;
     font-size: 18px;
     font-family: Arial, sans-serif;
-    background: linear-gradient(100deg, rgb(161, 161, 161) 0%, rgb(0, 0, 0) 100%);
-    margin: 5%;
-    margin-left: 20%;
-    margin-top: 10%;
+    background: linear-gradient(100deg, rgb(161, 161, 161) 0%, rgb(0, 0, 0) 100%);  
 }
 
 .enter-recipe{
