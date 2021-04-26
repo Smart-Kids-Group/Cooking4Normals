@@ -22,8 +22,8 @@ function Chat() {
       axios
         .get("https://api.chatengine.io/chats", { headers: authObject })
         .then((res) => {
-          localStorage.setItem("username", user.email);
-          localStorage.setItem("password", user.password);
+          localStorage.setItem("username", userProfile.email);
+          localStorage.setItem("password", userProfile.password);
         });
     } catch (error) {
       throw error;

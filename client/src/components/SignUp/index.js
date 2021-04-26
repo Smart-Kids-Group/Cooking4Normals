@@ -17,6 +17,7 @@ function SignUp() {
     auth.createUserWithEmailAndPassword(email,password).then(res => {
       setUserProfile( {
         email: email,
+        password: password,
         userId: res.user.uid
       });
       API.createChatUser(email,password);

@@ -12,7 +12,8 @@ function SearchBar(props) {
       <Container className="searchbar">
         <Row>
           <Col size="4">
-            <label>
+            <label
+            className="name-search">
               {" "}
               Search By Keyword (Chinese, pizza, etc)
               <Input
@@ -44,7 +45,7 @@ function SearchBar(props) {
             </FormBtn>
           </Col>
           <Col size="2">
-            <label class="dare">Do you Dare?</label>
+            <label className="dare">Do you Dare?</label>
             <Button
               variant="danger"
               onClick={props.handleRandomSearch}
