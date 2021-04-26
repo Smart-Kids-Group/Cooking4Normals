@@ -17,14 +17,21 @@ const RecipeImport = () => {
   const handleSubmit = event => {
     event.preventDefault();
     if (recipeURL) {
-      API.importRecipeInfo(recipeURL).then((res) => {
-        let recipe = res.data[0];
+      API.importRecipeInfo(recipeURL).then(res => {
+        let recipe = {
+              name: res.data[0].name,
+              description: res.data[0].description,
+              ingredients: res.data[0]["original-ingredients"],
+              instructions: res.data[0]["original-instructions"],
+              href: res.data[0].url
+             };
         API.saveRecipe(recipe)
           .then((res) => console.log(res, recipe))
           .catch((err) => console.log(err));
-      }); 
+      })}
     }
-  }
+    
+  
 
   return(
     <Container>
@@ -33,8 +40,8 @@ const RecipeImport = () => {
           <Form.Label>To import a recipe from anywhere on the web, paste it here! </Form.Label>
           <Form.Control type="text" placeholder="Paste your link here" onChange={handleInputChange}/>
         </Form.Group>
-        <Button variant="primary" type="submit" onSubmit={handleSubmit}>
-          Submit
+        <Button variant="primary" onClick={(e)=>handleSubmit(e)}>
+         Import
         </Button>
       </Form>
     </Container>

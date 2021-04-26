@@ -11,7 +11,7 @@ const FullRecipe = (props) => {
  const divStyle = {
   overflowY: "scroll",
   float: "left",
-  height: "500px",
+  height: "700px",
   position: "relative",
 };
 
@@ -39,9 +39,10 @@ const FullRecipe = (props) => {
               <Card.Text className="float-left">
                 {" "}
                 {recipe.description}
-                <hr />
               </Card.Text>
-            ) : null}            
+              
+            ) : null}  
+            <hr />          
             <ul>
               {recipe.ingredients
                 ? recipe.ingredients.map((ingredient, i) => (
