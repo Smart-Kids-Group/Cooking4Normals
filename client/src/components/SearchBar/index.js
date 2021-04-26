@@ -1,4 +1,5 @@
 import React from "react";
+import { DebounceInput } from "react-debounce-input"
 import { Input, FormBtn } from "../Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
 import Chat from "./pages/Chat";
@@ -20,7 +20,6 @@ import RecipeContext from "./utils/RecipeContext";
 
 const App = (props) => {
 
-  const history = useHistory();
   const [recipes, setRecipes] = useState([]);
 const [recipeData, setRecipeData] = useState({})
   
@@ -38,16 +37,9 @@ const [recipeData, setRecipeData] = useState({})
   
   useEffect(() => {
     auth.onAuthStateChanged(user => {
-       if (!user) {history.push('/')}
-       if (user) {
-        setUserProfile ({ ...userProfile,
-          email: user.email,
-          password:user.password,
-          userId: user.uid
-        });
-       }
+       if (!user) props.history.push('/')
     })
- }, [])
+ }, [userProfile])
 
 
   return (

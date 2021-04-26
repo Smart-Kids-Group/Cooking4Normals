@@ -14,7 +14,7 @@ function Video() {
 
   useEffect(() => {
     searchVideos(videoSearch)
-  }, [])
+  }, [videoSearch])
 
   function handleInputChange(event) {
     const { value } = event.target;
@@ -41,8 +41,8 @@ function Video() {
     <>
       <div className="bg">
       <VideoSearch 
-        handleInputChange= {handleInputChange} 
-        handleSearchSubmit= {handleSearchSubmit}/>
+        handleInputChange= {e=>handleInputChange(e)} 
+        handleSearchSubmit= {e => handleSearchSubmit(e)}/>
     <VideoList data={videoState}/>
         <Footer />
       </div>
