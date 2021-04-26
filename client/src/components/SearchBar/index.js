@@ -12,7 +12,8 @@ function SearchBar(props) {
       <Container className="searchbar">
         <Row>
           <Col size="4">
-            <label>
+            <label
+            className="name-search">
               {" "}
               Search By Keyword (Chinese, pizza, etc)
               <Input
