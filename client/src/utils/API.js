@@ -101,6 +101,10 @@ randomRecipes: function(pageID){
     }
     return axios.post("/api/users/" + user.email, { userData });
   },
+
+  getUser: function(id) {
+    return axios.get("/api/users/" + id);
+  },
   
   // Saves a recipe to the database
   saveRecipe: function(recipe) {

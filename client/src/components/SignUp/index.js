@@ -21,6 +21,7 @@ function SignUp() {
       });
       API.createChatUser(email,password);
       history.push("/profile");
+      API.updateUser(userProfile).then (res => console.log("User Updated"))
       
     })
    .catch(err => {

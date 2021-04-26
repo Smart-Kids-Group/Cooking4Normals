@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-// import Card from "react-bootstrap/Card";
-// import Image from "react-bootstrap/Image";
+import { Image, Transformation, CloudinaryContext } from "cloudinary-react";
+import Cloudinary from "cloudinary-core"
+import API from "../../utils/API"
 import Button from "react-bootstrap/Button"
 import UserContext from "../../utils/UserContext"
 import './ProfileIntro.css';
@@ -11,10 +12,41 @@ import './ProfileIntro.css';
 function ProfileIntro(){
 
     const { userProfile, setUserProfile } = useContext(UserContext)
+    
+    useEffect(() => {
+        loadProfile(userProfile.email)
+        console.log(userProfile)
+    }, [])
+    
+    const loadProfile = (email) => {
+        API.getUser(email).then( data =>
+            setUserProfile({
+                email: data.email,
+                favoriteCuisine: data.favoriteCuisine,
+                imageURL: data.imageURL,
+                profileDescription: data.profileDescription,
+                screenName: data.screenName,
+                fullName: data.fullName
+            })
 
-    const updateProfilePic = () => {
-         return "Profile pic stuff"
-    };
+        )
+    }
+
+    const widget = window.cloudinary.createUploadWidget({
+        cloudname: "smart-kids-group",
+        uploadPreset: "y0okbc7l"},
+        (error, result) => {checkUploadResult(result)})
+        
+    const showWidget = (widget) => {
+        widget.open()
+    }
+
+   const checkUploadResult = (resultEvent) => {
+       if (resultEvent.event === "success") {
+           setUserProfile ({...userProfile, imageURL: resultEvent.info.secure_url})
+           console.log(userProfile)
+       }
+   }
 
     return(
         <>
@@ -36,7 +68,7 @@ function ProfileIntro(){
                </div>  }
             </Col> 
             </Row>
-            <Button className="small" variant="secondary" onClick={updateProfilePic}>Edit Picture</Button>
+            <Button className="small" variant="secondary" onClick={()=>showWidget(widget)}>Upload Picture</Button>
             
         </Col>
         <Col mid={10} >
@@ -62,7 +94,7 @@ function ProfileIntro(){
             <Col mid={4} className="end">
                 <h3>Favorite cuisines</h3>
                 <p>{userProfile.favoriteCuisines}</p>
-                {userProfile.friends[0]
+                {/* {userProfile.friends[0]
                 ?
                 <h3>Friend's list</h3>
                 :null}
@@ -72,7 +104,7 @@ function ProfileIntro(){
                     <li>{friend}</li>
                 ))
                 : null} 
-                </ul>
+                </ul> */}
             </Col>
             <Col mid={4}></Col>
         </Row>

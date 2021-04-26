@@ -21,7 +21,6 @@ function Auth() {
           userId: user.uid
         });
         history.push("/dashboard");
-        API.updateUser(userProfile).then (res => console.log("User Updated"))
 
     }});
   }, [history]);
