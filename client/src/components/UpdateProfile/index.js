@@ -32,11 +32,11 @@ function EditProfile(props) {
 
   return (
 <>
-    <Button variant="primary" onClick={handleShow}>
+    <Button variant="primary" onClick={() => handleShow()}>
    Update your Profile Information
   </Button>
 
-    <Modal {...props} show={show} size="lg" onHide={handleClose} aria-labelledby="contained-modal-title-vcenter">
+    <Modal {...props} show={show} size="lg" onHide={() => handleClose()} aria-labelledby="contained-modal-title-vcenter">
     <Modal.Header closeButton>
       <Modal.Title id="contained-modal-title-vcenter">
        Update Your Profile
@@ -113,10 +113,10 @@ function EditProfile(props) {
       </Container>
     </Modal.Body>
     <Modal.Footer>
-    <Button variant="secondary" onClick={handleClose}>
+    <Button variant="secondary" onClick={() => handleClose()}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleSave}>
+          <Button variant="primary" onClick={() =>handleSave() }>
             Save Changes
           </Button>
     </Modal.Footer>

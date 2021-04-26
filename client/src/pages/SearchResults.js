@@ -4,14 +4,19 @@ import SearchBar from "../components/SearchBar";
 import API from "../utils/API";
 import Footer from "../components/Footer/index";
 
+
 function SearchResults() {
   // Setting our component's initial state
   const [recipes, setRecipes ] = useState([])
   const [recipeSearch, setRecipeSearch] = useState({
-    query: "q=pizza",
+    query: "",
     nameSearch: "",
     ingredientSearch: "",
   });
+
+  useEffect(() => {
+    loadRecipes(recipeSearch.query);
+  }, [recipeSearch.query]);
 
   useEffect(() => {
     handleRandomSearch();
@@ -42,8 +47,9 @@ function SearchResults() {
     }
     setRecipeSearch({ ...recipeSearch, query: query });
     console.log(recipeSearch.query);
-    loadRecipes(recipeSearch.query);
+    
   }
+
 
   function handleRandomSearch() {
     const pageID = Math.floor (Math.random() *100);
@@ -68,9 +74,9 @@ function SearchResults() {
     <>
       <div className="bg absolute">
         <SearchBar
-          handleInputChange={handleInputChange}
-          handleSearchSubmit={handleSearchSubmit}
-          handleRandomSearch={handleRandomSearch}
+          handleInputChange={e=>handleInputChange(e)}
+          handleSearchSubmit={e =>handleSearchSubmit(e)}
+          handleRandomSearch={() => handleRandomSearch}
         />
 
         {recipes
@@ -78,7 +84,7 @@ function SearchResults() {
               <RecipeCard
                 key={i}
                 data={recipe}
-                handleRecipeSubmit={importRecipe}
+                handleRecipeSubmit={recipeURL => importRecipe(recipeURL)}
               />
             ))
           : null}

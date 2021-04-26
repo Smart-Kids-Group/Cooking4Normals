@@ -25,7 +25,7 @@ function VideoList(props){
               <VideoCard
               key={i}
               data={video}
-              handleVideoSubmit={handleClick}
+              handleVideoSubmit={e => handleClick(e)}
               />
             ))
           : null}
