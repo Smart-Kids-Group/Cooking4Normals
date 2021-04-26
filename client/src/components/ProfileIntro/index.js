@@ -112,4 +112,4 @@ function ProfileIntro(){
     )
 }
 
-export default ProfileIntro
+export default ProfileIntro;
