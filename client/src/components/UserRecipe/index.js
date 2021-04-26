@@ -21,7 +21,12 @@ function UserRecipe(props) {
   const handleShow = () => setShow(true);
   
   const handleSave = () => {
-    API.saveRecipe(recipe);
+    let recipeData = {
+      name: recipe.name,
+      ingredients: recipe.ingredients,
+      instructions: recipe.instructions
+    }
+    API.saveRecipe(recipeData);
     setShow(false)
     }
 

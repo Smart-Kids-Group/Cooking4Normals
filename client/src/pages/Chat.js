@@ -9,21 +9,21 @@ import Footer from "../components/Footer";
 import Auth from "./Authentication"
 
 function Chat() {
-  const { user } = useContext(UserContext);
+  const { userProfile } = useContext(UserContext);
 
   if (!localStorage.getItem("username")) {
     const authObject = {
       "Project-ID": "bbe806e8-81f3-4f62-92b4-957850212ca6",
-      "User-Name": user.email,
-      "User-Secret": user.password,
+      "User-Name": userProfile.email,
+      "User-Secret": userProfile.password,
     };
 
     try {
       axios
         .get("https://api.chatengine.io/chats", { headers: authObject })
         .then((res) => {
-          localStorage.setItem("username", user.email);
-          localStorage.setItem("password", user.password);
+          localStorage.setItem("username", userProfile.email);
+          localStorage.setItem("password", userProfile.password);
         });
     } catch (error) {
       throw error;
