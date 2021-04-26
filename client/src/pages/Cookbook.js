@@ -29,18 +29,11 @@ function CookBook() {
   return (
     <>
       <Row className="bg absolute">
-        <Col sm={3}>
-          <UserRecipe />
-          <hr/>
-          <RecipeImport />
-        </Col>
-        <Col sm={8}>
-          <Container className="CB">
+        <Col className="CB">
             <h1 className="text-center">Personal Cookbook</h1>
             <br></br>
 
             <RecipeList data={recipes} />
-          </Container>
           
         </Col>
       </Row>

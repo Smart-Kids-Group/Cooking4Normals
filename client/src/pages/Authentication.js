@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 import "./auth.scss";
 import Footer from "../components/Footer/index";
 import UserContext from "../utils/UserContext";
-import API from "../utils/API";
 
 function Auth() {
   const history = useHistory();
