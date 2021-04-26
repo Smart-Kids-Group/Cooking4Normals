@@ -1,8 +1,6 @@
 import React, { useContext,useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { Image, Transformation, CloudinaryContext } from "cloudinary-react";
-import Cloudinary from "cloudinary-core"
 import API from "../../utils/API"
 import Button from "react-bootstrap/Button"
 import UserContext from "../../utils/UserContext"
@@ -15,7 +13,6 @@ function ProfileIntro(){
     
     useEffect(() => {
         loadProfile(userProfile.email)
-        console.log(userProfile)
     }, [])
     
     const loadProfile = (email) => {
@@ -32,9 +29,10 @@ function ProfileIntro(){
         )
     }
 
-    const widget = window.cloudinary.createUploadWidget({
+    let widget = window.cloudinary.createUploadWidget({
         cloudname: "smart-kids-group",
-        uploadPreset: "y0okbc7l"},
+        uploadPreset: "y0okbc7l",
+        cropping: true},
         (error, result) => {checkUploadResult(result)})
         
     const showWidget = (widget) => {
