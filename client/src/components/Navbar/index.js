@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Navbar.css";
 import UserContext from "../../utils/UserContext";
 import { auth } from "../../utils/firebase";
@@ -7,6 +7,7 @@ import { auth } from "../../utils/firebase";
 
 function Navbar() {
   const [click, setClick] = useState(false);
+  const history = useHistory();
   const [button, setButton] = useState(true);
   const {userProfile} = useContext(UserContext);
   const handleClick = () => setClick(!click);
@@ -16,7 +17,7 @@ function Navbar() {
     auth
       .signOut()
       .then((res) => {
-        props.history.push("/sign-up");
+        history.push("/sign-up");
         //do something else with res
       })
       .catch((err) => {
