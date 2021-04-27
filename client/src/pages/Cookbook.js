@@ -30,8 +30,7 @@ function CookBook() {
     <>
       <Row className="bg absolute">
         <Col className="CB">
-            <h1 className="text-center">Personal Cookbook</h1>
-            <br></br>
+            
 
             <RecipeList data={recipes} />
           
