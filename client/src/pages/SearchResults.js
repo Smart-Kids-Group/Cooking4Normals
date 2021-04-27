@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import RecipeCard from "../components/RecipeCard";
 import SearchBar from "../components/SearchBar";
 import API from "../utils/API";
 import Footer from "../components/Footer/index";
+import UserContext from "../utils/UserContext";
 
 
 function SearchResults() {
@@ -13,6 +14,7 @@ function SearchResults() {
     nameSearch: "",
     ingredientSearch: "",
   });
+  const { userProfile } = useContext(UserContext)
 
   useEffect(() => {
     loadRecipes(recipeSearch.query);
@@ -62,7 +64,14 @@ function SearchResults() {
   function importRecipe(recipeURL) {
     if (recipeURL) {
       API.importRecipeInfo(recipeURL).then((res) => {
-        let recipe = res.data[0];
+        let recipe = {
+          name: res.data[0].name,
+          description: res.data[0].description,
+          ingredients: res.data[0]["original-ingredients"],
+          instructions: res.data[0]["original-instructions"],
+          href: res.data[0].url,
+          userName: userProfile.email
+         };
         API.saveRecipe(recipe)
           .then((res) => console.log(res, recipe))
           .catch((err) => console.log(err));

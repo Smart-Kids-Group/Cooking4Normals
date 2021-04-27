@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button";
 import API from "../../utils/API";
 import "./style.css";
+import UserContext from "../../utils/UserContext";
 
 const RecipeImport = () => {
   
   const [recipeURL, setRecipeURL] = useState("");
-
+  const { userProfile } = useContext(UserContext);
+  
   const handleInputChange = event => {
     const { value } = event.target;
     setRecipeURL(value);
@@ -23,7 +25,8 @@ const RecipeImport = () => {
               description: res.data[0].description,
               ingredients: res.data[0]["original-ingredients"],
               instructions: res.data[0]["original-instructions"],
-              href: res.data[0].url
+              href: res.data[0].url,
+              userName: userProfile.email
              };
         API.saveRecipe(recipe)
           .then((res) => console.log(res, recipe))

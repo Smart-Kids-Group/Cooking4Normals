@@ -1,27 +1,28 @@
 import React, { useContext, useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import UserRecipe from "../components/UserRecipe";
 import Footer from "../components/Footer";
 import RecipeList from "../components/RecipelList";
-import Container from "react-bootstrap/Container";
 import API from "../utils/API";
 import RecipeContext from "../utils/RecipeContext";
-import RecipeImport from "../components/RecipeImport";
+import UserContext from "../utils/UserContext";
+
 
 function CookBook() {
   // const [showUserRecipe, setShowUserRecipe] = useState(false);
   // const [showSearchBar, setShowSearchBar] = useState(false);
   const { recipes, setRecipes } = useContext(RecipeContext);
+  const { userProfile } = useContext(UserContext);
 
   useEffect(() => {
-    loadRecipes();
+    loadRecipes(userProfile.email);
   }, []);
 
   function loadRecipes() {
-    API.getRecipes()
+    API.getRecipes(userProfile.email)
       .then((res) => {
         setRecipes(res.data);
+        console.log(res)
       })
       .catch((err) => console.log(err));
   }
