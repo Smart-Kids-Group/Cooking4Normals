@@ -19,7 +19,7 @@ function SearchBar(props) {
               Search By Keyword
               <Input
                 name="nameSearch"
-                onChange={props.handleInputChange}
+                onChange={(e) => props.handleInputChange(e)}
                 placeholder="Cuisine"
                 id="nameSearch"
               />
@@ -31,7 +31,7 @@ function SearchBar(props) {
               Search by Ingredient
               <Input
                 name="ingredientSearch"
-                onChange={props.handleInputChange}
+                onChange={(e) => props.handleInputChange(e)}
                 placeholder="Ingredient"
                 id="ingredientSearch"
               />
