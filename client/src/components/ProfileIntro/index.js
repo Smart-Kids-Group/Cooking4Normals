@@ -1,15 +1,9 @@
 import React, { useContext,useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-<<<<<<< HEAD
-import API from "../../utils/API"
-import Button from "react-bootstrap/Button"
-import UserContext from "../../utils/UserContext"
-=======
 import API from "../../utils/API";
 import Button from "react-bootstrap/Button";
 import UserContext from "../../utils/UserContext";
->>>>>>> 4f05ea83828cede54b605a877accbb300a6699c1
 import './ProfileIntro.css';
 
 
@@ -19,7 +13,6 @@ function ProfileIntro(){
     
     useEffect(() => {
         loadProfile(userProfile.email)
-        console.log(userProfile)
     }, [])
     
     const loadProfile = (email) => {
@@ -118,4 +111,4 @@ function ProfileIntro(){
     )
 }
 
-export default ProfileIntro;
+export default ProfileIntro
