@@ -21,7 +21,7 @@ function ProfileIntro(){
        
             setUserProfile({
                 email: data.data[0].email,
-                favoriteCuisine: data.data[0].favoriteCuisine,
+                favoriteCuisines: data.data[0].favoriteCuisines,
                 imageURL: data.data[0].imageURL,
                 profileDescription: data.data[0].profileDescription,
                 screenName: data.data[0].screenName,
