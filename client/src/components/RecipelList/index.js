@@ -48,6 +48,12 @@ function RecipeList(props) {
           </ListGroup>
         </Col>
         <Col sm={8} className="dots">
+        <Row
+        className="cookbook-header">
+          <Col>
+        <h1>Personal Cookbook</h1>
+        </Col>
+        </Row>
           <FullRecipe {...props} indexNum={recipeKey} style={divStyle}/>
         </Col>
       </Row>

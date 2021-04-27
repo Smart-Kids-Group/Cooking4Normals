@@ -1,14 +1,10 @@
 .sticky-video {
   position: sticky !important;
   top: 20px !important;
-  margin: auto !important;
-
+  margin-left: 20px;
 }
 
-.sticky-video .opts {
-  height: 100px;
-  width: 174px;
-}
+
 
 
 

@@ -15,9 +15,7 @@
 .CB {
     background-color: rgba(255, 255, 255, 0.534);
     text-align: center;
-    padding-top: 1px;
-    
-
+    padding-top: 1px; 
 }
 
 .create{
@@ -25,9 +23,25 @@
     font-size: 18px;
     font-family: Arial, sans-serif;
     background: linear-gradient(100deg, rgb(161, 161, 161) 0%, rgb(0, 0, 0) 100%);  
+    margin-top: 20px;
 }
 
 .enter-recipe{
     background: linear-gradient(100deg, rgb(161, 161, 161) 0%, rgb(0, 0, 0) 100%);
     color: white;
+}
+
+.cookbook-header-mobile {
+    border-bottom: 5px solid rgb(159, 224, 129);
+    border-top: 5px solid rgb(159, 224, 129);
+    margin: 5px;
+}
+
+@media screen and (min-width: 960px) {
+    .cookbook-header-mobile h1 {
+        display: none;
+    }
+    .cookbook-header-mobile {
+        border: none;
+    }
 }

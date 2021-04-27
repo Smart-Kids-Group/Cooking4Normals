@@ -49,6 +49,12 @@ function UserRecipe(props) {
 
   return (
 <>
+<Row
+        className="cookbook-header-mobile">
+          <Col>
+        <h1>Personal Cookbook</h1>
+        </Col>
+        </Row>
     <Button variant="secondary" onClick={() => handleShow()} className="create">
    Create your own Recipe
   </Button>
@@ -61,6 +67,7 @@ function UserRecipe(props) {
     </Modal.Header>
     <Modal.Body className="show-grid">
       <Container>
+
         <Row>
           <Col>
           <InputGroup className="mb-3">
