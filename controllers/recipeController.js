@@ -4,14 +4,14 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Recipe
-    .find()
+    .find({})
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
     db.Recipe
-    .find(req.params.name)
+    .find({userName: req.params.id})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

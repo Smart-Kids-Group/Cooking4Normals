@@ -29,8 +29,8 @@ randomRecipes: function(pageID){
 })
 },
     // gets all recipes from the DB
-  getRecipes: function() {
-    return axios.get("/api/recipes");
+  getRecipes: function(email) {
+    return axios.get("/api/recipes/"+ email);
   },
   // Gets the recipe with the given id
   getRecipe: function(id) {

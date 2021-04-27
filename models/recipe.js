@@ -20,6 +20,9 @@ let recipeSchema = new Schema ({
     },
     image: {
         type: String
+    },
+    userName: {
+        type: String
     }
 
 });
