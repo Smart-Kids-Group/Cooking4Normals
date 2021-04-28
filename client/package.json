@@ -18,6 +18,7 @@
     "react-activity-feed": "^0.10.2",
     "react-bootstrap": "^1.4.0",
     "react-chat-engine": "^1.8.10",
+    "react-cloudinary-upload-widget": "^1.4.3",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^4.0.3",

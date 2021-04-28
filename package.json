@@ -33,6 +33,7 @@
     "react-activity-feed": "^0.10.2",
     "react-avatar-editor": "^11.1.0",
     "react-bootstrap": "^1.5.2",
+    "react-cloudinary-upload-widget": "^1.4.3",
     "react-debounce-input": "^3.2.3",
     "react-dropzone": "^11.3.2",
     "react-use-state-with-callback": "^1.0.2",

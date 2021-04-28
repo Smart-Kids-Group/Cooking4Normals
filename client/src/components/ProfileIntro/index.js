@@ -1,9 +1,12 @@
 import React, { useContext,useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import API from "../../utils/API"
-import Button from "react-bootstrap/Button"
-import UserContext from "../../utils/UserContext"
+
+import { Widget } from "react-cloudinary-upload-widget"
+import API from "../../utils/API";
+import Button from "react-bootstrap/Button";
+import UserContext from "../../utils/UserContext";
+
 import './ProfileIntro.css';
 
 
@@ -30,15 +33,8 @@ function ProfileIntro(){
         }
         )
     }
-
-    const widget = window.cloudinary.createUploadWidget({
-        cloudname: "smart-kids-group",
-        uploadPreset: "y0okbc7l"},
-        (error, result) => {checkUploadResult(result)})
         
-    const showWidget = (widget) => {
-        widget.open()
-    }
+    const showWidget = () => {}   
 
    const checkUploadResult = (resultEvent) => {
        if (resultEvent.event === "success") {
@@ -49,6 +45,7 @@ function ProfileIntro(){
 
     return(
         <>
+        
         <Row>
         <Col mid={2}>
            <Row>
@@ -67,8 +64,13 @@ function ProfileIntro(){
                </div>  }
             </Col> 
             </Row>
-            <Button className="small" variant="secondary" onClick={()=>showWidget(widget)}>Upload Picture</Button>
-            
+            {/* <Button className="small" variant="secondary" onClick={()=>showWidget()}>Upload Picture</Button> */}
+            <Widget 
+            cloudname="smart-kids-group"
+            uploadPreset="y0okbc71"
+            resourceType="image"
+            onSuccess={(res) => checkUploadResult(res)}
+           /> 
         </Col>
         <Col mid={10} >
             <div className = "BioDiv">

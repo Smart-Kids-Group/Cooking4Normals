@@ -14,7 +14,7 @@ import {ProtectedRoute} from "./utils/protectedRoute";
 import { auth } from './utils/firebase';
 import UserContext from "./utils/UserContext";
 import RecipeContext from "./utils/RecipeContext";
-
+import { WidgetLoader }from "react-cloudinary-upload-widget"
 
 
 
@@ -55,6 +55,7 @@ const [recipeData, setRecipeData] = useState({})
   return (
     <UserContext.Provider value = {{userProfile, setUserProfile}} >
       <RecipeContext.Provider value = {{recipes, setRecipes, recipeData, setRecipeData}}>
+      <WidgetLoader />
     <Router>
       <div>
 

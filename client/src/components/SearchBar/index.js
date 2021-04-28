@@ -36,7 +36,7 @@ function SearchBar(props) {
               />
             </label>
             <FormBtn
-              onClick={props.handleSearchSubmit}
+              onClick={(e) => props.handleSearchSubmit(e)}
               type="success"
               className="input-lg"
               id="search-page-button"
@@ -49,7 +49,7 @@ function SearchBar(props) {
             <label className="dare">Do you Dare?</label>
             <Button
               variant="danger"
-              onClick={props.handleRandomSearch}
+              onClick={() => props.handleRandomSearch()}
               id="dare-button"
             >
               I dare!
