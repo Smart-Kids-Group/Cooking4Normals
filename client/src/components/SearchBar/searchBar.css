@@ -4,6 +4,10 @@
   width: 250px;
 }
 
+.name-search {
+  margin-left: 110px;
+}
+
 #ingredientSearch {
   border: 1px solid rgb(121, 121, 121);
   border-radius: 15px;
@@ -22,7 +26,7 @@
 }
 
 #dare-button{
-  margin-bottom: 6px;
+  margin: 4px 0 6px 5px;
   border-radius: 7px;
 }
 
@@ -33,5 +37,13 @@
 @media screen and (max-width: 960px) {
   .name-search {
     height: 60px;
+  }
+  .name-search {
+    margin-left: 0px;
+  }
+.dare-col {
+    text-align: center;
+    margin-top: -25px;
+    height: 115px;
   }
 }

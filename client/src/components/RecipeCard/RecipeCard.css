@@ -10,6 +10,7 @@
   margin-left: 100px;
   border: solid;
   border-radius: 0.2rem;
+  width: 150px;
 }
 
 .Link-butt {
@@ -17,10 +18,20 @@
   background-color: white (0.8);
   border: solid 1px;
   border-radius: 0.2rem;
-  padding: 2px;
-  color: "black";
-  font-family: "Arial";
-  font-size: "17px";
+  padding: 5px;
+  color: black !important;
+  font-family: Arial;
+  font-size: 17px;
+  width: 150px;
+}
+
+.Link-butt:hover {
+  text-decoration: none !important;
+  background-color: rgb(191, 191, 191) !important;
+}
+
+.Save-butt:hover {
+  background-color: rgb(191, 191, 191) !important;
 }
 
 @media screen and (max-width: 960px) {
