@@ -10,7 +10,7 @@ function Video() {
   const [videoState, setVideoState] = useState({
     videos: [],
     displayVideo: null});
-  const [videoSearch, setVideoSearch] = useState("cooking");
+  const [videoSearch, setVideoSearch] = useState("Gordon Ramsey");
 
   useEffect(() => {
     searchVideos(videoSearch)
