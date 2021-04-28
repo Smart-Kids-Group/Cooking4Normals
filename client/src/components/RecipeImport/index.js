@@ -43,7 +43,7 @@ const RecipeImport = () => {
           <Form.Label>To import a recipe from anywhere on the web, paste it here! </Form.Label>
           <Form.Control type="text" placeholder="Paste your link here" onChange={e =>handleInputChange(e)}/>
         </Form.Group>
-        <Button variant="primary" onClick={(e)=>handleSubmit(e)}>
+        <Button className="import-button" variant="primary" onClick={(e)=>handleSubmit(e)}>
          Import
         </Button>
       </Form>

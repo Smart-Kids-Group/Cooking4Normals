@@ -5,3 +5,30 @@
 .sidelist{
     overflow-y: scroll;
 }
+
+.cookbook-header {
+    border-bottom: 5px solid rgb(159, 224, 129);
+    border-top: 5px solid rgb(159, 224, 129);
+    margin: 5px;
+}
+
+.Impo {
+    padding-left: 25px !important;
+}
+
+.list-group {
+    margin-left: 15px;
+    justify-content: center;
+    text-align: center !important;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 960px) {
+    .list-group {
+        width: 93vw;
+        margin-bottom: 20px;
+    }
+    .cookbook-header h1{
+        display: none;
+    }
+}
