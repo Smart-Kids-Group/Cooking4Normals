@@ -85,7 +85,7 @@ function SearchResults() {
         <SearchBar
           handleInputChange={e=>handleInputChange(e)}
           handleSearchSubmit={e =>handleSearchSubmit(e)}
-          handleRandomSearch={() => handleRandomSearch}
+          handleRandomSearch={() => handleRandomSearch()}
         />
 
         {recipes
