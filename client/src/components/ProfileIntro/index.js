@@ -1,7 +1,6 @@
 import React, { useContext,useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-
 import { Widget } from "react-cloudinary-upload-widget"
 import API from "../../utils/API";
 import Button from "react-bootstrap/Button";
@@ -55,22 +54,24 @@ function ProfileIntro(){
                 <h1 className ="picHeader">{userProfile.fullName}'s Profile</h1>
                 {userProfile.image
                 ?<img className="proPic" alt="userImage" src={userProfile.image}></img>
-                :<img className="proPic" src="https://via.placeholder.com/360"
+                :<img className="proPic" height="75%" width="60%" src="./4EC3D64E-8008-4226-B002-C67F051F4DE9_1_105_c.jpeg"
                 alt="placeholder" ></img>}
                </div>: <div>
                 <h1 className ="picHeader">My Profile</h1>
-                <img className="proPic" src="https://via.placeholder.com/360"
+                <img className="proPic" src="./4EC3D64E-8008-4226-B002-C67F051F4DE9_1_105_c.jpeg"
                         alt="placeholder" ></img>
                </div>  }
             </Col> 
             </Row>
             {/* <Button className="small" variant="secondary" onClick={()=>showWidget()}>Upload Picture</Button> */}
             <Widget 
-            cloudname="smart-kids-group"
-            uploadPreset="y0okbc71"
-            resourceType="image"
+            cloudname="my_cloud_name"
+            uploadPreset="unsigned_preset"
             onSuccess={(res) => checkUploadResult(res)}
            /> 
+
+
+
         </Col>
         <Col mid={10} >
             <div className = "BioDiv">
