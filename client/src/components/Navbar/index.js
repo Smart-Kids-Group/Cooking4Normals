@@ -71,6 +71,14 @@ function Navbar() {
                 Chat
               </Link>
             </li> */}
+              <li className="nav-item">
+              <Link
+                to="/search"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Search
+              </Link>
             <li className="nav-item">
               <Link
                 to="/cookbook"
@@ -80,14 +88,7 @@ function Navbar() {
                 Cookbook
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/search"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Search
-              </Link>
+          
             </li>
             <li className="nav-item">
               <Link to="/video" className="nav-links" onClick={closeMobileMenu}>
