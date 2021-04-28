@@ -5,7 +5,7 @@ import UserContext from "../../utils/UserContext";
 import { auth } from "../../utils/firebase";
 
 
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const history = useHistory();
   const [button, setButton] = useState(true);

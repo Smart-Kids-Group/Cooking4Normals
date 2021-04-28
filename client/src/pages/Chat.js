@@ -5,8 +5,8 @@ import ChatFeed from "../components/Chat/ChatFeed";
 import { useContext } from "react";
 import axios from "axios";
 import UserContext from "../utils/UserContext";
-import Footer from "../components/Footer";
-import Auth from "./Authentication"
+import Footer from "../components/Footer/index";
+import Auth from "./Authentication";
 
 function Chat() {
   const { userProfile } = useContext(UserContext);
