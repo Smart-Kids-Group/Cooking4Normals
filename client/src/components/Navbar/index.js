@@ -66,11 +66,11 @@ function Navbar() {
                 Dashboard
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/chat" className="nav-links" onClick={closeMobileMenu}>
                 Chat
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link
                 to="/cookbook"
